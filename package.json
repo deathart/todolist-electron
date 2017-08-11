@@ -1,27 +1,31 @@
 {
-  "name": "todolist-electron",
-  "version": "1.0.0",
-  "description": "Todolist write with Node JS & Electron",
-  "main": "app/main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/deathart/todolist-electron.git"
-  },
-  "keywords": [
-    "todo",
-    "todolist",
-    "electron",
-    "node",
-    "nodejs",
-    "javascript"
-  ],
-  "author": "deathart",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/deathart/todolist-electron/issues"
-  },
-  "homepage": "https://github.com/deathart/todolist-electron#readme"
+    "name": "todolist-electron",
+    "version": "1.0.0",
+    "description": "Todolist write with Node JS & Electron",
+    "main": "app/main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "electron ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/deathart/todolist-electron.git"
+    },
+    "keywords": [
+        "todo",
+        "todolist",
+        "electron",
+        "node",
+        "nodejs",
+        "javascript"
+    ],
+    "author": "deathart",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/deathart/todolist-electron/issues"
+    },
+    "homepage": "https://github.com/deathart/todolist-electron#readme",
+    "dependencies": {
+        "electron": "^1.7.5"
+    }
 }
