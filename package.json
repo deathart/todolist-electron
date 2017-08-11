@@ -4,7 +4,7 @@
     "description": "Todolist write with Node JS & Electron",
     "main": "app/main.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jshint --reporter=reporter.js app",
         "start": "electron ."
     },
     "repository": {
@@ -27,5 +27,10 @@
     "homepage": "https://github.com/deathart/todolist-electron#readme",
     "dependencies": {
         "electron": "^1.7.5"
+    },
+    "devDependencies": {
+        "jshint": "^2.9.5",
+        "jshint-stylish": "^2.2.1",
+        "jshint-stylish-summary": "^0.1.2"
     }
 }
