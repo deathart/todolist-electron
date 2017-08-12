@@ -6,15 +6,21 @@ let mainWindow;
 
 function createWindow() {
 
-    mainWindow = new BrowserWindow({ width: 1800, height: 1200 });
+    mainWindow = new BrowserWindow({ width: 1800, height: 1200, backgroundColor: '#312450', show: false });
 
     mainWindow.loadURL(`file://${__dirname}/html/index.html`);
+
+    mainWindow.once('ready-to-show', () => {
+        mainWindow.show();
+    });
 
     mainWindow.webContents.openDevTools();
 
     mainWindow.on('closed', () => {
         mainWindow = null;
     });
+
+    require('./menu');
 }
 
 app.on('ready', createWindow);
