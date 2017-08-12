@@ -1,7 +1,23 @@
 const { ipcMain, electron, app, BrowserWindow } = require('electron');
 const windowStateKeeper = require('electron-window-state');
+const fs = require('fs');
 
 let mainWindow;
+
+if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron")) {
+    fs.mkdirSync(process.env.USERPROFILE + "/Documents/todolist-electron");
+    fs.writeFile(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json", "", (err) => {
+        if (err) throw err;
+    });
+} else {
+    if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json")) {
+        fs.writeFile(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json", "", (err) => {
+            if (err) throw err;
+
+            console.log("The file was succesfully saved!");
+        });
+    }
+}
 
 function createWindow() {
 
