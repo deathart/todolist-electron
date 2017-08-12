@@ -38,4 +38,10 @@ app.on('activate', () => {
 ipcMain.on('change-page', function(event, arg) {
     let page_name = arg.name;
     mainWindow.webContents.loadURL(`file://${__dirname}/html/` + page_name + `.html`);
+    if (arg.project_id) { //set project if for project html page
+        let projectID = arg.project_id;
+        mainWindow.webContents.on('did-finish-load', () => {
+            mainWindow.webContents.send('project_id', projectID);
+        });
+    }
 });
