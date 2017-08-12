@@ -27,6 +27,7 @@
     "homepage": "https://github.com/deathart/todolist-electron#readme",
     "dependencies": {
         "electron": "^1.7.5",
+        "electron-window-state": "^4.1.1",
         "jquery": "^3.2.1",
         "lowdb": "^0.16.2",
         "winston": "^2.3.1"
