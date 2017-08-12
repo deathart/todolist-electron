@@ -23,7 +23,7 @@ function createWindow() {
 
     mainWindowState.manage(mainWindow);
 
-    mainWindow.loadURL(`file://${__dirname}/html/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/html/home.html`);
 
     mainWindow.once('ready-to-show', () => {
         mainWindow.show();
