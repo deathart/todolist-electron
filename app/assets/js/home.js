@@ -1,6 +1,10 @@
 const $ = require('jquery');
 const ipcRenderer = require('electron').ipcRenderer;
+const low = require('lowdb');
+const db = low(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json");
 const settings = require('electron-settings');
+
+db.defaults({ projects: [] }).write();
 
 $("#home_menu > ul > li").click(function() {
 
@@ -16,6 +20,25 @@ $("#home_menu > ul > li").click(function() {
 
     return false;
 
+});
+
+$(".add_project").submit(function(e) {
+    e.preventDefault();
+
+    let title_project = $("#inputName").val();
+
+    let futur_id = 0;
+
+    if (db.get('projects').size().value() > 0) {
+        let last_project = db.get('projects').takeRight(1).value();
+        futur_id = last_project[0].id + 1;
+    } else {
+        futur_id = 1;
+    }
+
+    db.get('projects').push({ id: futur_id, title: title_project }).write();
+
+    return false;
 });
 
 $("#test").click(function(e) {
