@@ -1,0 +1,23 @@
+html,
+body {
+    height: 100%;
+}
+
+.container-fluid {
+    position: static !important;
+}
+
+#home_menu {
+    padding: 100% 10% 0 10%;
+    background: #312450;
+    color: white;
+    text-align: right;
+    height: 100%;
+}
+
+#home_content {
+    padding: 30% 5% 0 5%;
+    background-color: #5e42a6;
+    color: white;
+    height: 100%;
+}
