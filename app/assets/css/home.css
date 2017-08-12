@@ -15,9 +15,35 @@ body {
     height: 100%;
 }
 
+#home_menu>ul>li {
+    cursor: pointer;
+    padding: 5px;
+    color: gray;
+}
+
+#home_menu>ul>li.active {
+    border-bottom: 1px solid white;
+    font-weight: bold;
+    color: white;
+}
+
 #home_content {
     padding: 30% 5% 0 5%;
     background-color: #5e42a6;
     color: white;
     height: 100%;
+}
+
+#home_content>.block_welcome {}
+
+#home_content>.block_myproject {
+    display: none;
+}
+
+#home_content>.block_newproject {
+    display: none;
+}
+
+#home_content>.block_settings {
+    display: none;
 }
