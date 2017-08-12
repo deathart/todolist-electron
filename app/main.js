@@ -1,12 +1,10 @@
-const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+const { ipcMain, electron, app, BrowserWindow } = require('electron');
 
 let mainWindow;
 
 function createWindow() {
 
-    mainWindow = new BrowserWindow({ width: 1800, height: 1200, backgroundColor: '#312450', show: false });
+    mainWindow = new BrowserWindow({ width: 1800, height: 1200, minWidth: 1180, minHeight: 600, backgroundColor: '#312450', show: false });
 
     mainWindow.loadURL(`file://${__dirname}/html/index.html`);
 
@@ -20,7 +18,7 @@ function createWindow() {
         mainWindow = null;
     });
 
-    require('./menu');
+    //require('./menu');
 }
 
 app.on('ready', createWindow);
@@ -35,4 +33,9 @@ app.on('activate', () => {
     if (mainWindow === null) {
         createWindow();
     }
+});
+
+ipcMain.on('change-page', function(event, arg) {
+    let page_name = arg.name;
+    mainWindow.webContents.loadURL(`file://${__dirname}/html/` + page_name + `.html`);
 });
