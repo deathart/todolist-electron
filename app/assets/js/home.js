@@ -38,9 +38,7 @@ $(".add_project").submit(function(e) {
 
     db.get('projects').push({ id: futur_id, title: title_project }).write();
 
-    return false;
-});
+    ipcRenderer.send('change-page', { "name": 'project', "type": 'project', "project_id": futur_id });
 
-$("#test").click(function(e) {
-    ipcRenderer.send('change-page', { "name": 'project', "type": 'project', "project_id": 5 });
+    return false;
 });
