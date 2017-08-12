@@ -40,6 +40,11 @@ body {
     display: none;
 }
 
+#home_content>.block_myproject>ul>li {
+    color: black;
+    cursor: pointer;
+}
+
 #home_content>.block_newproject {
     display: none;
 }

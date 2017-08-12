@@ -42,3 +42,13 @@ $(".add_project").submit(function(e) {
 
     return false;
 });
+
+
+$.each(db.get('projects').value(), function(key, value) {
+    $(".list_myprojects").append('<li class="list-group-item project_click" data-projectid="' + value.id + '">' + value.title + '</li>');
+});
+
+$(".project_click").click(function() {
+    let id_project = $(this).data("projectid");
+    ipcRenderer.send('change-page', { "name": 'project', "type": 'project', "project_id": id_project });
+});
