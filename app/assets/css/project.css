@@ -6,3 +6,23 @@ body {
 .container-fluid {
     position: static !important;
 }
+
+#config {
+    background-color: #312450;
+    padding: 2%;
+    color: white;
+    border-right: 1px solid white;
+}
+
+#content {
+    background-color: #5e42a6;
+    padding: 2%;
+    color: white;
+}
+
+#footer {
+    background-color: #312450;
+    padding: 2%;
+    color: white;
+    border-top: 1px solid white;
+}
