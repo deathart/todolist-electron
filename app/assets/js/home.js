@@ -4,7 +4,9 @@ const low = require('lowdb');
 const db = low(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json");
 const settings = require('electron-settings');
 
-db.defaults({ projects: [] }).write();
+db.defaults({ projects: [], projects_info: [] }).write();
+
+document.title += " [v" + process.env.npm_package_version + "]";
 
 $("#home_menu > ul > li").click(function() {
 
