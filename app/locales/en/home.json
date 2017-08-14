@@ -1,5 +1,18 @@
 {
     "title": "Home",
-    "content_welcome": "Welcome",
-    "menu_welcome": "Welcome"
+    "menu_welcome": "Welcome",
+    "menu_myproject": "My Projects",
+    "menu_newproject": "New project",
+    "menu_settings": "Settings",
+    "content_title_welcome": "Welcome",
+    "content_title_myproject": "My projects",
+    "content_title_addproject": "Add project",
+    "content_title_settings": "Settings",
+    "content_desc_welcome": "Description à venir",
+    "form_add_project_name": "Name",
+    "form_add_project_submit": "Add",
+    "settings_lang": "Language",
+    "settings_lang_choice": "Choice",
+    "settings_lang_fr": "French",
+    "settings_lang_en": "Anglais"
 }

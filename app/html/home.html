@@ -18,51 +18,50 @@
                     <div id="home_menu">
                         <ul class="list-unstyled">
                             <li class="active" data-page="welcome">{{ i18n "menu_welcome" }}</li>
-                            <li data-page="myproject">Mes projets</li>
-                            <li data-page="newproject">Nouveau projet</li>
-                            <li data-page="settings">Configuration</li>
+                            <li data-page="myproject">{{ i18n "menu_myproject" }}</li>
+                            <li data-page="newproject">{{ i18n "menu_newproject" }}</li>
+                            <li data-page="settings">{{ i18n "menu_settings" }}</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-9">
                     <div id="home_content">
                         <div id="block_select" class="block_welcome">
-                            <h1 class="display-3">{{ i18n "content_welcome" }}</h1>
+                            <h1 class="display-3">{{ i18n "content_title_welcome" }}</h1>
                             <p class="lead">
-                                Description
+                                {{ i18n "content_desc_welcome" }}
                             </p>
                         </div>
                         <div id="block_select" class="block_myproject">
-                            <h1 class="display-3">Mes projets</h1>
+                            <h1 class="display-3">{{ i18n "content_title_myproject" }}</h1>
                             <p class="lead">
                                 <ul class="list-group list_myprojects">
                                 </ul>
                             </p>
                         </div>
                         <div id="block_select" class="block_newproject">
-                            <h1 class="display-3">Ajouter un projet</h1>
+                            <h1 class="display-3">{{ i18n "content_title_addproject" }}</h1>
                             <p class="lead">
                                 <form class="add_project">
                                     <div class="form-group row">
-                                        <label for="inputName" class="col-sm-2 col-form-label">Nom</label>
+                                        <label for="inputName" class="col-sm-2 col-form-label">{{ i18n "form_add_project_name" }}</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="inputName" placeholder="Nom">
+                                            <input type="text" class="form-control" id="inputName">
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-light float-right">Ajouter</button>
+                                    <button type="submit" class="btn btn-light float-right">{{ i18n "form_add_project_submit" }}</button>
                                 </form>
                             </p>
                         </div>
                         <div id="block_select" class="block_settings">
-                            <h1 class="display-3">Configuration</h1>
+                            <h1 class="display-3">{{ i18n "content_title_settings" }}</h1>
                             <p class="lead">
-                                Description
                                 <form class="form-inline">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelectPref">Language</label>
+                                    <label class="mr-sm-2" for="inlineFormCustomSelectPref">{{ i18n "settings_lang" }}</label>
                                     <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref">
-                                        <option selected>Choisissez</option>
-                                        <option value="1">Français</option>
-                                        <option value="2">Anglais</option>
+                                        <option selected>{{ i18n "settings_lang_choice" }}</option>
+                                        <option value="1">{{ i18n "settings_lang_fr" }}</option>
+                                        <option value="2">{{ i18n "settings_lang_en" }}</option>
                                     </select>
                                 </form>
                             </p>

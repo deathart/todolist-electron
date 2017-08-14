@@ -1,5 +1,18 @@
 {
     "title": "Accueil",
-    "content_welcome": "Bienvenue",
-    "menu_welcome": "Bienvenue"
+    "menu_welcome": "Bienvenue",
+    "menu_myproject": "Mes projets",
+    "menu_newproject": "Nouveau projet",
+    "menu_settings": "Configuration",
+    "content_title_welcome": "Bienvenue",
+    "content_title_myproject": "Mes projets",
+    "content_title_addproject": "Ajouter un projet",
+    "content_title_settings": "Configuration",
+    "content_desc_welcome": "Description à venir",
+    "form_add_project_name": "Nom",
+    "form_add_project_submit": "Ajouter",
+    "settings_lang": "Language",
+    "settings_lang_choice": "choisissez",
+    "settings_lang_fr": "Français",
+    "settings_lang_en": "Anglais"
 }
