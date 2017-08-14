@@ -29,6 +29,8 @@
         "electron": "^1.7.5",
         "electron-settings": "^3.1.1",
         "electron-window-state": "^4.1.1",
+        "handlebars": "^4.0.10",
+        "i18n": "^0.8.3",
         "jquery": "^3.2.1",
         "lowdb": "^0.16.2"
     },

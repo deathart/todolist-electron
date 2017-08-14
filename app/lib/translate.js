@@ -1,15 +1,10 @@
 const fs = require('fs');
 
-module.exports = function(files, Directory) {
+module.exports = function(file, Directory) {
 
-    if (files == 1) {
-        this.file = "fr.json";
-    } else if (files == 2) {
-        this.file = "en.json";
-    }
     this.error = false;
     this.location = Directory;
-    this.loc = this.location + this.file;
+    this.loc = this.location + file + ".json";
 
     try {
         this.data = fs.readFileSync(this.loc);

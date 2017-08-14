@@ -80,7 +80,6 @@ ipcMain.on('change-page', function(event, arg) {
     mainWindow.webContents.loadURL(`file://${__dirname}/html/` + page_name + `.html`);
     if (arg.type == "project") {
         let projectID = arg.project_id;
-        mainWindow.webContents.on('did-finish-load', () => {});
         ipcMain.on('getproject', (event, arg) => {
             event.returnValue = projectID;
         });

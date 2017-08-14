@@ -1,4 +1,6 @@
 {
     "title_home": "Home",
-    "title_project": "Project"
+    "title_project": "Project",
+    "content_welcome": "Welcome",
+    "menu_welcome": "Welcome"
 }

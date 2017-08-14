@@ -5,10 +5,24 @@ const db = low(process.env.USERPROFILE + "/Documents/todolist-electron/project_l
 const settings = require('electron-settings');
 const translatejson = require('../lib/translate');
 const Translate = new translatejson(settings.get("lang"), __dirname + '/../locales/');
+const handlebars = require("handlebars");
+const i18n = require("i18n");
 
 db.defaults({ projects: [], projects_info: [] }).write();
 
 document.title += Translate.GetLine("title_home") + " [v" + process.env.npm_package_version + "]";
+
+i18n.configure({
+    locales: ['en', 'fr'],
+    directory: __dirname + '/../locales/'
+});
+
+handlebars.registerHelper('i18n', function(str) {
+    return i18n.__({ phrase: str, locale: settings.get('lang') });
+});
+
+let template = handlebars.compile(document.documentElement.innerHTML);
+document.documentElement.innerHTML = template();
 
 $("#home_menu > ul > li").click(function() {
 
@@ -62,9 +76,12 @@ $("#inlineFormCustomSelectPref").change(function() {
     let resu = $(this).val();
 
     if (parseInt(resu)) {
-
-        settings.set('lang', resu);
-
+        if (resu == 1) {
+            settings.set('lang', 'fr');
+        } else if (resu == 2) {
+            settings.set('lang', 'en');
+        }
+        location.reload();
     }
 
 });
