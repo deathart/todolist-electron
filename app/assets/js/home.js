@@ -3,10 +3,12 @@ const ipcRenderer = require('electron').ipcRenderer;
 const low = require('lowdb');
 const db = low(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json");
 const settings = require('electron-settings');
+const translatejson = require('../lib/translate');
+const Translate = new translatejson(settings.get("lang"), __dirname + '/../locales/');
 
 db.defaults({ projects: [], projects_info: [] }).write();
 
-document.title += " [v" + process.env.npm_package_version + "]";
+document.title += Translate.GetLine("title_home") + " [v" + process.env.npm_package_version + "]";
 
 $("#home_menu > ul > li").click(function() {
 
@@ -66,5 +68,3 @@ $("#inlineFormCustomSelectPref").change(function() {
     }
 
 });
-
-console.log(settings.get('lang'))

@@ -23,7 +23,7 @@ if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron")) {
 }
 
 if (!settings.has('lang')) {
-    settings.set('lang', 1);
+    settings.set('lang', "fr");
 }
 
 function createWindow() {
