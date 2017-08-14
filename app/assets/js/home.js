@@ -54,3 +54,17 @@ $(".project_click").click(function() {
     let id_project = $(this).data("projectid");
     ipcRenderer.send('change-page', { "name": 'project', "type": 'project', "project_id": id_project });
 });
+
+$("#inlineFormCustomSelectPref").change(function() {
+
+    let resu = $(this).val();
+
+    if (parseInt(resu)) {
+
+        settings.set('lang', resu);
+
+    }
+
+});
+
+console.log(settings.get('lang'))

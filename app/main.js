@@ -1,6 +1,7 @@
 const { ipcMain, electron, app, BrowserWindow } = require('electron');
 const windowStateKeeper = require('electron-window-state');
 const fs = require('fs');
+const settings = require('electron-settings');
 
 let mainWindow;
 
@@ -19,6 +20,10 @@ if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron")) {
             }
         });
     }
+}
+
+if (!settings.has('lang')) {
+    settings.set('lang', 1);
 }
 
 function createWindow() {
