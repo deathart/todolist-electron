@@ -12,15 +12,14 @@ let project_id = ipcRenderer.sendSync('getproject');
 let project_name = db.get('projects').filter({ id: project_id }).value()[0].title;
 
 i18n.configure({
-    locales: ['en', 'fr'],
-    directory: __dirname + '/../locales/'
+    directory: __dirname + '/../locales/' + settings.get('lang') + "/"
 });
 
 handlebars.registerHelper('i18n', function(str) {
-    return i18n.__({ phrase: str, locale: settings.get('lang') + "/home" });
+    return i18n.__({ phrase: str, locale: "project" });
 });
 
 let template = handlebars.compile(document.documentElement.innerHTML);
 document.documentElement.innerHTML = template();
 
-document.title += Translate.GetLine("title_project") + " (" + project_name + ") [v" + process.env.npm_package_version + "]";
+document.title += " (" + project_name + ") [v" + process.env.npm_package_version + "]";

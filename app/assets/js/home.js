@@ -10,15 +10,14 @@ const i18n = require("i18n");
 
 db.defaults({ projects: [], projects_info: [] }).write();
 
-document.title += Translate.GetLine("title") + " [v" + process.env.npm_package_version + "]";
+document.title += " [v" + process.env.npm_package_version + "]";
 
 i18n.configure({
-    locales: ['en', 'fr'],
-    directory: __dirname + '/../locales/'
+    directory: __dirname + '/../locales/' + settings.get('lang') + "/"
 });
 
 handlebars.registerHelper('i18n', function(str) {
-    return i18n.__({ phrase: str, locale: settings.get('lang') + "/home" });
+    return i18n.__({ phrase: str, locale: "home" });
 });
 
 let template = handlebars.compile(document.documentElement.innerHTML);
