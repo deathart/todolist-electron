@@ -58,10 +58,11 @@ $(".add_project").submit(function(e) {
 
     let date_create = moment().format("DD-MM-YYYY à HH:mm");
 
-    db.get('projects').push({ id: futur_id, title: title_project, date_create: date_create, desc: desc_project, date_lastup: "" }).write();
+    if (title_project) {
+        db.get('projects').push({ id: futur_id, title: title_project, date_create: date_create, desc: desc_project, date_lastup: "" }).write();
 
-    ipcRenderer.send('change-page', { "name": 'project', "type": 'project', "project_id": futur_id });
-
+        ipcRenderer.send('change-page', { "name": 'project', "type": 'project', "project_id": futur_id });
+    }
     return false;
 });
 
