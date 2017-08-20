@@ -14,6 +14,17 @@ body {
     border-right: 1px solid white;
 }
 
+#config>p {
+    text-align: center;
+}
+
+#config>p>.edit-project {
+    padding-left: 5px;
+    color: orange;
+    font-size: 14px;
+    cursor: pointer;
+}
+
 #content {
     background-color: #5e42a6;
     padding: 2%;

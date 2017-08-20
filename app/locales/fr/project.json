@@ -1,3 +1,6 @@
 {
-    "title": "projet"
+    "title": "projet",
+    "modal_edit_project_title": "Modification du projet",
+    "modal_edit_project_btn_cancel": "Sauvegarder",
+    "modal_edit_project_btn_save": "Annuler"
 }

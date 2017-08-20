@@ -23,3 +23,10 @@ let template = handlebars.compile(document.documentElement.innerHTML);
 document.documentElement.innerHTML = template();
 
 document.title += " (" + project_name + ") [v" + process.env.npm_package_version + "]";
+
+$("#config > p").prepend(project_name);
+
+$(".edit-project").click(function() {
+    //Open modal for update project settings
+    $('#ModalEditProject').modal('show');
+});
