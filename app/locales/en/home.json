@@ -10,9 +10,11 @@
     "content_title_settings": "Settings",
     "content_desc_welcome": "Description à venir",
     "form_add_project_name": "Name",
+    "form_add_project_desc": "Description",
     "form_add_project_submit": "Add",
     "settings_lang": "Language",
     "settings_lang_choice": "Choice",
     "settings_lang_fr": "French",
-    "settings_lang_en": "Anglais"
+    "settings_lang_en": "Anglais",
+    "content_myproject_list_date_create": "Create "
 }

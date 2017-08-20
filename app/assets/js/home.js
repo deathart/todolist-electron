@@ -7,12 +7,14 @@ const translatejson = require('../lib/translate');
 const Translate = new translatejson("home", __dirname + '/../locales/' + settings.get("lang") + "/");
 const handlebars = require("handlebars");
 const i18n = require("i18n");
+const moment = require('moment');
 
 db.defaults({ projects: [], projects_info: [] }).write();
 
 document.title += " [v" + process.env.npm_package_version + "]";
 
 i18n.configure({
+    locale: "home",
     directory: __dirname + '/../locales/' + settings.get('lang') + "/"
 });
 
@@ -43,6 +45,7 @@ $(".add_project").submit(function(e) {
     e.preventDefault();
 
     let title_project = $("#inputName").val();
+    let desc_project = $("#inputDesc").val();
 
     let futur_id = 0;
 
@@ -53,7 +56,9 @@ $(".add_project").submit(function(e) {
         futur_id = 1;
     }
 
-    db.get('projects').push({ id: futur_id, title: title_project }).write();
+    let date_create = moment().format("DD-MM-YYYY à HH:mm");
+
+    db.get('projects').push({ id: futur_id, title: title_project, date_create: date_create, desc: desc_project, date_lastup: "" }).write();
 
     ipcRenderer.send('change-page', { "name": 'project', "type": 'project', "project_id": futur_id });
 
@@ -62,7 +67,8 @@ $(".add_project").submit(function(e) {
 
 
 $.each(db.get('projects').value(), function(key, value) {
-    $(".list_myprojects").append('<li class="list-group-item project_click" data-projectid="' + value.id + '">' + value.title + '</li>');
+    console.log(value.date_lastup)
+    $(".list_myprojects").append('<li class="list-group-item list-group-item-action flex-column align-items-start project_click" data-projectid="' + value.id + '"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">' + value.title + '</h5><small>' + i18n.__({ phrase: "content_myproject_list_date_create", locale: "home" }) + value.date_create + '</small></div><p class="mb-1">' + value.desc + '</p><small>' + value.date_lastup + '</small></li>');
 });
 
 $(".project_click").click(function() {

@@ -32,7 +32,8 @@
         "handlebars": "^4.0.10",
         "i18n": "^0.8.3",
         "jquery": "^3.2.1",
-        "lowdb": "^0.16.2"
+        "lowdb": "^0.16.2",
+        "moment": "^2.18.1"
     },
     "devDependencies": {
         "jshint": "^2.9.5",
