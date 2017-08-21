@@ -68,7 +68,6 @@ $(".add_project").submit(function(e) {
 
 
 $.each(db.get('projects').value(), function(key, value) {
-    console.log(value.date_lastup)
     $(".list_myprojects").append('<li class="list-group-item list-group-item-action flex-column align-items-start project_click" data-projectid="' + value.id + '"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">' + value.title + '</h5><small>' + i18n.__({ phrase: "content_myproject_list_date_create", locale: "home" }) + value.date_create + '</small></div><p class="mb-1">' + value.desc + '</p><small>' + value.date_lastup + '</small></li>');
 });
 

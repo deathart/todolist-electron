@@ -4,7 +4,7 @@
     "description": "Todolist write with Node JS & Electron",
     "main": "app/main.js",
     "scripts": {
-        "test": "jshint --reporter=reporter.js app",
+        "test": "jshint --reporter=reporter.js --exclude=app/assets/js/vendor/ app",
         "start": "electron ."
     },
     "repository": {
