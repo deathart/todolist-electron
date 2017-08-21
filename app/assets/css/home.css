@@ -49,6 +49,10 @@ body {
     cursor: pointer;
 }
 
+.delete-project {
+    color: red;
+}
+
 #home_content>.block_newproject {
     display: none;
 }
