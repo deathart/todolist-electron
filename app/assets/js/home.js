@@ -1,7 +1,8 @@
 const $ = require('jquery');
 const ipcRenderer = require('electron').ipcRenderer;
 const low = require('lowdb');
-const db = low(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json");
+const FileSync = require('lowdb/adapters/FileSync');
+const db = low(new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json"));
 const settings = require('electron-settings');
 const translatejson = require('../lib/translate');
 const Translate = new translatejson("home", __dirname + '/../locales/' + settings.get("lang") + "/");
