@@ -68,12 +68,27 @@ $(".add_project").submit(function(e) {
 
 
 $.each(db.get('projects').value(), function(key, value) {
-    $(".list_myprojects").append('<li class="list-group-item list-group-item-action flex-column align-items-start project_click" data-projectid="' + value.id + '"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">' + value.title + '</h5><small>' + i18n.__({ phrase: "content_myproject_list_date_create", locale: "home" }) + value.date_create + '</small></div><p class="mb-1">' + value.desc + '</p><small>' + value.date_lastup + '</small></li>');
+    $(".list_myprojects").append('<li class="list-group-item list-group-item-action flex-column align-items-start project_click" data-projectid="' + value.id + '"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">' + value.title + '</h5><small>' + i18n.__({ phrase: "content_myproject_list_date_create", locale: "home" }) + value.date_create + '</small></div><p class="mb-1">' + value.desc + '</p><small>' + value.date_lastup + '<div class="float-right"><i class="fa fa-trash-o delete-project" aria-hidden="true"></i></div></small></li>');
 });
 
 $(".project_click").click(function() {
     let id_project = $(this).data("projectid");
     ipcRenderer.send('change-page', { "name": 'project', "type": 'project', "project_id": id_project });
+});
+
+$(".delete-project").click(function(e) {
+
+    e.preventDefault();
+
+    var project_id = $(this).parents("li").data("projectid");
+
+    db.get('projects').remove({ "id": project_id }).write();
+    db.get('projects_info').remove({ "id": project_id }).write();
+
+    $(this).parents("li").remove();
+
+    return false;
+
 });
 
 $("#inlineFormCustomSelectPref").change(function() {
