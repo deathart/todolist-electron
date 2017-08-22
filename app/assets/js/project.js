@@ -9,7 +9,7 @@ const handlebars = require("handlebars");
 const i18n = require("i18n");
 
 let project_id = ipcRenderer.sendSync('getproject');
-let project_name = db.get('projects').filter({ id: project_id }).value()[0].title;
+let project_info = db.get('projects').filter({ id: project_id }).value()[0]
 
 i18n.configure({
     directory: __dirname + '/../locales/' + settings.get('lang') + "/"
@@ -22,9 +22,11 @@ handlebars.registerHelper('i18n', function(str) {
 let template = handlebars.compile(document.documentElement.innerHTML);
 document.documentElement.innerHTML = template();
 
-document.title += " (" + project_name + ") [v" + process.env.npm_package_version + "]";
+document.title += " (" + project_info.title + ") [v" + process.env.npm_package_version + "]";
 
-$("#config > p").prepend(project_name);
+$("#config > p").prepend(project_info.title);
+
+$("#config > p > small").html(project_info.desc);
 
 $(".edit-project").click(function() {
     //Open modal for update project settings
