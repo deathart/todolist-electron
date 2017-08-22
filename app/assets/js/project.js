@@ -29,7 +29,7 @@ $("#config > p").prepend(project_info.title);
 $("#config > p > small").html(project_info.desc);
 
 $("#BtnHome").click(function() {
-    ipcRenderer.send('change-page', { "name": 'home', "type": 'home' });
+    ipcRenderer.send('change-page', { "name": 'home' });
 });
 
 $(".edit-project").click(function() {

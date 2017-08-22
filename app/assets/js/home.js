@@ -62,7 +62,7 @@ $(".add_project").submit(function(e) {
     if (title_project) {
         db.get('projects').push({ id: futur_id, title: title_project, date_create: date_create, desc: desc_project, date_lastup: "" }).write();
 
-        ipcRenderer.send('change-page', { "name": 'project', "type": 'project', "project_id": futur_id });
+        ipcRenderer.send('change-page', { "name": 'project', "project_id": futur_id });
     }
     return false;
 });
@@ -74,7 +74,7 @@ $.each(db.get('projects').value(), function(key, value) {
 
 $(".project_click").click(function() {
     let id_project = $(this).data("projectid");
-    ipcRenderer.send('change-page', { "name": 'project', "type": 'project', "project_id": id_project });
+    ipcRenderer.send('change-page', { "name": 'project', "project_id": id_project });
 });
 
 $(".delete-project").click(function(e) {

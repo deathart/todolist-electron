@@ -83,7 +83,7 @@ app.on('activate', () => {
 ipcMain.on('change-page', function(event, arg) {
     let page_name = arg.name;
     mainWindow.webContents.loadURL(`file://${__dirname}/html/` + page_name + `.html`);
-    if (arg.type == "project") {
+    if (arg.name == "project") {
         let projectID = arg.project_id;
         ipcMain.on('getproject', (event, arg) => {
             event.returnValue = projectID;
