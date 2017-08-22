@@ -29,6 +29,8 @@ $("#config > p").prepend(project_info.title);
 $("#config > p > small").html(project_info.desc);
 
 $(".edit-project").click(function() {
-    //Open modal for update project settings
     $('#ModalEditProject').modal('show');
+    $(".close-modal").click(function() {
+        $('#ModalEditProject').modal('hide');
+    });
 });
