@@ -49,6 +49,8 @@ function createWindow() {
         show: false
     });
 
+    require('./menu');
+
     mainWindow.loadURL(`file://${__dirname}/html/home.html`);
 
     mainWindow.once('ready-to-show', () => {
@@ -57,13 +59,12 @@ function createWindow() {
 
     if (settings.get('dev')) {
         mainWindow.webContents.openDevTools();
+        require('electron-debug')({ showDevTools: true });
     }
 
     mainWindow.on('closed', () => {
         mainWindow = null;
     });
-
-    require('./menu');
 }
 
 app.on('ready', createWindow);
