@@ -4,6 +4,7 @@ const fs = require('fs');
 const settings = require('electron-settings');
 
 let mainWindow;
+let mainWindowState;
 
 if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron")) {
     fs.mkdirSync(process.env.USERPROFILE + "/Documents/todolist-electron");
@@ -28,7 +29,7 @@ if (!settings.has('lang')) {
 
 function createWindow() {
 
-    let mainWindowState = windowStateKeeper({
+    mainWindowState = windowStateKeeper({
         defaultWidth: 1300,
         defaultHeight: 800
     });
@@ -44,12 +45,10 @@ function createWindow() {
         show: false
     });
 
-    mainWindowState.manage(mainWindow);
-
     mainWindow.loadURL(`file://${__dirname}/html/home.html`);
 
     mainWindow.once('ready-to-show', () => {
-        mainWindow.show();
+        mainWindowState.manage(mainWindow);
     });
 
     mainWindow.webContents.openDevTools();
