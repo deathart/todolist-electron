@@ -31,9 +31,22 @@ body {
     color: white;
 }
 
-#footer {
+#BtnHome {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
     background-color: #312450;
-    padding: 2%;
     color: white;
-    border-top: 1px solid white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+#BtnHome:hover {
+    background-color: #1B1037;
 }

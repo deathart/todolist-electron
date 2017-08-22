@@ -28,6 +28,10 @@ $("#config > p").prepend(project_info.title);
 
 $("#config > p > small").html(project_info.desc);
 
+$("#BtnHome").click(function() {
+    ipcRenderer.send('change-page', { "name": 'home', "type": 'home' });
+});
+
 $(".edit-project").click(function() {
     $("#inputName").val(project_info.title);
     $("#inputDesc").val(project_info.desc);
