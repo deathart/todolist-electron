@@ -1,8 +1,9 @@
-const { Menu } = require('electron');
-const electron = require('electron');
-const app = electron.app;
+const { Menu, electron, app } = require('electron');
 
-const template = [{
+let template;
+let menuBuild;
+
+template = [{
     label: 'Fichier',
     submenu: [{
         label: 'Quitter',
@@ -27,5 +28,5 @@ const template = [{
     ]
 }];
 
-const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(menu);
+menuBuild = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menuBuild);
