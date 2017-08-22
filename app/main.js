@@ -63,7 +63,7 @@ function createWindow() {
         mainWindow = null;
     });
 
-    //require('./menu');
+    require('./menu');
 }
 
 app.on('ready', createWindow);
