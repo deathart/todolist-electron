@@ -1,6 +1,8 @@
 {
     "title": "project",
     "modal_edit_project_title": "Update project",
-    "modal_edit_project_btn_cancel": "Save",
-    "modal_edit_project_btn_save": "Cancel"
+    "modal_edit_project_btn_cancel": "Cancel",
+    "modal_edit_project_btn_save": "Save",
+    "modal_edit_project_label_title": "Title",
+    "modal_edit_project_label_desc": "Description"
 }

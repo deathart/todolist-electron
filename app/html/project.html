@@ -42,13 +42,22 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
-
+                    <form class="update_project">
+                        <div class="form-group row">
+                            <label for="inputName" class="col-sm-2 col-form-label">{{ i18n "modal_edit_project_label_title" }}</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputName" required>
+                            </div>
+                            <label for="inputDesc" class="col-sm-2 col-form-label">{{ i18n "modal_edit_project_label_desc" }}</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="inputDesc" rows="3"></textarea>
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary close-modal">{{ i18n "modal_edit_project_btn_save" }}</button>
-                    <button type="button" class="btn btn-primary">{{ i18n "modal_edit_project_btn_cancel" }}</button>
+                    <button type="button" class="btn btn-secondary close-modal">{{ i18n "modal_edit_project_btn_cancel" }}</button>
+                    <button type="button" class="btn btn-primary save-modal">{{ i18n "modal_edit_project_btn_save" }}</button>
                 </div>
             </div>
         </div>
