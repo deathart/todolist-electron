@@ -33,9 +33,12 @@ $("#BtnHome").click(function() {
 });
 
 $(".edit-project").click(function() {
+
     $("#inputName").val(project_info.title);
     $("#inputDesc").val(project_info.desc);
+
     $('#ModalEditProject').modal('show');
+
     $(".save-modal").click(function() {
         let title_project = $("#inputName").val();
         let desc_project = $("#inputDesc").val();
@@ -43,7 +46,9 @@ $(".edit-project").click(function() {
             db.get('projects').find({ title: project_info.title }).assign({ title: title_project, desc: desc_project }).write();
         }
     });
+
     $(".close-modal").click(function() {
         $('#ModalEditProject').modal('hide');
     });
+
 });
