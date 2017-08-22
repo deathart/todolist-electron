@@ -106,3 +106,17 @@ $("#inlineFormCustomSelectPref").change(function() {
     }
 
 });
+
+if (settings.get('dev') == true) {
+    $("#InputDevMode").prop('checked', true);
+}
+
+$("#InputDevMode").change(function() {
+    if ($(this).is(":checked")) {
+        settings.set('dev', true);
+        ipcRenderer.send('change-dev', { "dev": true });
+    } else {
+        settings.set('dev', false);
+        ipcRenderer.send('change-dev', { "dev": false });
+    }
+});

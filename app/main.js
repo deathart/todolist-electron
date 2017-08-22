@@ -27,6 +27,10 @@ if (!settings.has('lang')) {
     settings.set('lang', "fr");
 }
 
+if (!settings.has('dev')) {
+    settings.set('dev', false);
+}
+
 function createWindow() {
 
     mainWindowState = windowStateKeeper({
@@ -51,7 +55,9 @@ function createWindow() {
         mainWindowState.manage(mainWindow);
     });
 
-    mainWindow.webContents.openDevTools();
+    if (settings.get('dev')) {
+        mainWindow.webContents.openDevTools();
+    }
 
     mainWindow.on('closed', () => {
         mainWindow = null;
@@ -83,5 +89,14 @@ ipcMain.on('change-page', function(event, arg) {
             event.returnValue = projectID;
         });
 
+    }
+});
+
+ipcMain.on('change-dev', function(event, arg) {
+    let dev_is = arg.dev;
+    if (dev_is) {
+        mainWindow.webContents.openDevTools();
+    } else {
+        mainWindow.webContents.closeDevTools();
     }
 });

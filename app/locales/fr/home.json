@@ -16,5 +16,6 @@
     "settings_lang_choice": "choisissez",
     "settings_lang_fr": "Français",
     "settings_lang_en": "Anglais",
-    "content_myproject_list_date_create": "Créer le "
+    "content_myproject_list_date_create": "Créer le ",
+    "settings_dev": "Mode dévellopement"
 }

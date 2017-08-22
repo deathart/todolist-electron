@@ -60,13 +60,22 @@
                         <div id="block_select" class="block_settings">
                             <h1 class="display-3">{{ i18n "content_title_settings" }}</h1>
                             <p class="lead">
-                                <form class="form-inline">
-                                    <label class="mr-sm-2" for="inlineFormCustomSelectPref">{{ i18n "settings_lang" }}</label>
-                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref">
-                                        <option selected>{{ i18n "settings_lang_choice" }}</option>
-                                        <option value="1">{{ i18n "settings_lang_fr" }}</option>
-                                        <option value="2">{{ i18n "settings_lang_en" }}</option>
-                                    </select>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="inlineFormCustomSelectPref">{{ i18n "settings_lang" }}</label>
+                                        <select class="custom-select" id="inlineFormCustomSelectPref">
+                                            <option selected>{{ i18n "settings_lang_choice" }}</option>
+                                            <option value="1">{{ i18n "settings_lang_fr" }}</option>
+                                            <option value="2">{{ i18n "settings_lang_en" }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="InputDevMode">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">{{ i18n "settings_dev" }}</span>
+                                        </label>
+                                    </div>
                                 </form>
                             </p>
                         </div>
