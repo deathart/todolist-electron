@@ -9,7 +9,7 @@ body {
 
 #home_menu {
     background: #312450;
-    color: white;
+    color: #FFFFFF;
     text-align: right;
     height: 100%;
     padding: 0 10% 0 20%;
@@ -22,18 +22,18 @@ body {
 #home_menu>ul>li {
     cursor: pointer;
     padding: 5px;
-    color: gray;
+    color: #808080;
 }
 
 #home_menu>ul>li.active {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #FFFFFF;
     font-weight: bold;
-    color: white;
+    color: #FFFFFF;
 }
 
 #home_content {
     background-color: #5e42a6;
-    color: white;
+    color: #FFFFFF;
     height: 100%;
     padding: 0 2% 0 2%;
 }
@@ -45,12 +45,12 @@ body {
 }
 
 #home_content>.block_myproject>ul>li {
-    color: black;
+    color: #000000;
     cursor: pointer;
 }
 
 .delete-project {
-    color: red;
+    color: #FF0000;
 }
 
 #home_content>.block_newproject {

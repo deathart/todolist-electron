@@ -9,7 +9,7 @@ const handlebars = require("handlebars");
 const i18n = require("i18n");
 
 let project_id = ipcRenderer.sendSync('getproject');
-let project_info = db.get('projects').filter({ id: project_id }).value()[0]
+let project_info = db.get('projects').filter({ id: project_id }).value()[0];
 
 i18n.configure({
     directory: __dirname + '/../locales/' + settings.get('lang') + "/"
@@ -49,6 +49,16 @@ $(".edit-project").click(function() {
 
     $(".close-modal").click(function() {
         $('#ModalEditProject').modal('hide');
+    });
+
+});
+
+$(".add_task").click(function() {
+
+    $('#ModalAddTask').modal('show');
+
+    $(".close-modal").click(function() {
+        $('#ModalAddTask').modal('hide');
     });
 
 });
