@@ -4,5 +4,11 @@
     "modal_edit_project_btn_cancel": "Annuler",
     "modal_edit_project_btn_save": "Sauvegarder",
     "modal_edit_project_label_title": "Titre",
-    "modal_edit_project_label_desc": "Description"
+    "modal_edit_project_label_desc": "Description",
+    "modal_add_task_title": "Ajouter une tâche",
+    "modal_add_task_btn_cancel": "Annuler",
+    "modal_add_task_btn_add": "Ajouter",
+    "left_info_title": "Informations",
+    "content_list_task": "Liste des tâches",
+    "content_btn_open_add_task_modal": "Ajouter une tâche"
 }

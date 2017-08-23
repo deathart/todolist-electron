@@ -20,13 +20,13 @@
                             <i class="fa fa-pencil-square-o fa-lg edit-project" aria-hidden="true"></i>
                             <small style="display: block;"></small>
                         </p>
-                        <h4>Information</h4>
+                        <h4>{{ i18n "left_info_title" }}</h4>
 
                     </div>
                 </div>
                 <div class="col-10">
                     <div id="content" class="h-100">
-                        <h5>Liste des tâches (<span class="add_task">Ajouter</span>)</h5>
+                        <h5>{{ i18n "content_list_task" }} (<span class="add_task">{{ i18n "content_btn_open_add_task_modal" }}</span>)</h5>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="ModalLabelEditProject">Add task</h5>
+                    <h5 class="modal-title" id="ModalLabelEditProject">{{ i18n "modal_add_task_title" }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -76,8 +76,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary close-modal">{{ i18n "modal_edit_project_btn_cancel" }}</button>
-                    <button type="button" class="btn btn-primary save-modal">{{ i18n "modal_edit_project_btn_save" }}</button>
+                    <button type="button" class="btn btn-secondary close-modal">{{ i18n "modal_add_task_btn_cancel" }}</button>
+                    <button type="button" class="btn btn-primary add-modal">{{ i18n "modal_add_task_btn_add" }}</button>
                 </div>
             </div>
         </div>

@@ -4,5 +4,11 @@
     "modal_edit_project_btn_cancel": "Cancel",
     "modal_edit_project_btn_save": "Save",
     "modal_edit_project_label_title": "Title",
-    "modal_edit_project_label_desc": "Description"
+    "modal_edit_project_label_desc": "Description",
+    "modal_add_task_title": "Add task",
+    "modal_add_task_btn_cancel": "Cancel",
+    "modal_add_task_btn_add": "Add",
+    "left_info_title": "Information",
+    "content_list_task": "Tasks list",
+    "content_btn_open_add_task_modal": "Add task"
 }
