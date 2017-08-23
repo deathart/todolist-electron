@@ -1,12 +1,19 @@
 const { Menu, electron, app } = require('electron');
+const settings = require('electron-settings');
+const i18n = require("i18n");
+
+i18n.configure({
+    directory: __dirname + '/locales/' + settings.get('lang') + "/"
+});
 
 let template;
 let menuBuild;
 
 template = [{
-    label: 'Fichier',
+    label: i18n.__({ phrase: "menu_file", locale: "general" }),
     submenu: [{
-        label: 'Quitter',
+        label: i18n.__({ phrase: "menu_file_exit", locale: "general" }),
+        accelerator: 'Alt+F4',
         click() {
             app.quit();
         }
@@ -14,13 +21,15 @@ template = [{
 }, {
     label: '?',
     submenu: [{
-            label: 'Mise à jour',
+            label: i18n.__({ phrase: "menu_Other_update", locale: "general" }),
+            accelerator: 'CmdOrCtrl+U',
             click() {
 
             }
         },
         {
-            label: 'Information',
+            label: i18n.__({ phrase: "menu_Other_info", locale: "general" }),
+            accelerator: 'CmdOrCtrl+I',
             click() {
 
             }
