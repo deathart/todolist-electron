@@ -1,4 +1,4 @@
-const { Menu, electron, app } = require('electron');
+const { Menu } = require('electron');
 const settings = require('electron-settings');
 const i18n = require("i18n");
 
@@ -6,10 +6,7 @@ i18n.configure({
     directory: __dirname + '/locales/' + settings.get('lang') + "/"
 });
 
-let template;
-let menuBuild;
-
-template = [{
+let template = [{
     label: i18n.__({ phrase: "menu_file", locale: "general" }),
     submenu: [{
         label: i18n.__({ phrase: "menu_file_exit", locale: "general" }),
@@ -23,19 +20,18 @@ template = [{
     submenu: [{
             label: i18n.__({ phrase: "menu_Other_update", locale: "general" }),
             accelerator: 'CmdOrCtrl+U',
-            click() {
+            click(menuItem, currentWindow) {
 
             }
         },
         {
             label: i18n.__({ phrase: "menu_Other_info", locale: "general" }),
             accelerator: 'CmdOrCtrl+I',
-            click() {
+            click(menuItem, currentWindow) {
 
             }
         }
     ]
 }];
 
-menuBuild = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(menuBuild);
+Menu.setApplicationMenu(Menu.buildFromTemplate(template));

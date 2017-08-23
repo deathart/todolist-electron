@@ -1,10 +1,15 @@
-const { ipcMain, electron, app, BrowserWindow } = require('electron');
+const { ipcMain, electron, app, BrowserWindow, Menu } = require('electron');
 const windowStateKeeper = require('electron-window-state');
 const fs = require('fs');
 const settings = require('electron-settings');
+const i18n = require("i18n");
 
 let mainWindow;
 let mainWindowState;
+
+i18n.configure({
+    directory: __dirname + '/locales/' + settings.get('lang') + "/"
+});
 
 if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron")) {
     fs.mkdirSync(process.env.USERPROFILE + "/Documents/todolist-electron");
@@ -49,7 +54,35 @@ function createWindow() {
         show: false
     });
 
-    require('./menu');
+    let template = [{
+        label: i18n.__({ phrase: "menu_file", locale: "general" }),
+        submenu: [{
+            label: i18n.__({ phrase: "menu_file_exit", locale: "general" }),
+            accelerator: 'Alt+F4',
+            click() {
+                app.quit();
+            }
+        }]
+    }, {
+        label: '?',
+        submenu: [{
+                label: i18n.__({ phrase: "menu_Other_update", locale: "general" }),
+                accelerator: 'CmdOrCtrl+U',
+                click(menuItem, currentWindow) {
+
+                }
+            },
+            {
+                label: i18n.__({ phrase: "menu_Other_info", locale: "general" }),
+                accelerator: 'CmdOrCtrl+I',
+                click(menuItem, currentWindow) {
+                    OpenAboutWindow(mainWindow);
+                }
+            }
+        ]
+    }];
+
+    Menu.setApplicationMenu(Menu.buildFromTemplate(template));
 
     mainWindow.loadURL(`file://${__dirname}/html/home.html`);
 
@@ -101,3 +134,22 @@ ipcMain.on('change-dev', function(event, arg) {
         mainWindow.webContents.closeDevTools();
     }
 });
+
+function OpenAboutWindow(win) {
+    let aboutwin = new BrowserWindow({
+        width: 350,
+        height: 400,
+        parent: mainWindow,
+        modal: true,
+        alwayOnTop: true,
+        resizable: false,
+        minimizable: false,
+        maximizable: false
+    });
+    aboutwin.loadURL(`file://${__dirname}/html/about.html`);
+    aboutwin.setMenu(null);
+    aboutwin.webContents.closeDevTools();
+    aboutwin.once('ready-to-show', () => {
+        aboutwin.show();
+    });
+}
