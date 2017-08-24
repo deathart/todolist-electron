@@ -17,5 +17,6 @@
     "settings_lang_fr": "French",
     "settings_lang_en": "Anglais",
     "content_myproject_list_date_create": "Create ",
-    "settings_dev": "Develop mode"
+    "settings_dev": "Develop mode",
+    "content_myproject_list_date_last_update": "Last update"
 }
