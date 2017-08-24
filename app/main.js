@@ -141,6 +141,7 @@ function OpenAboutWindow(win) {
         height: 400,
         parent: mainWindow,
         modal: true,
+        show: false,
         alwayOnTop: true,
         resizable: false,
         minimizable: false,
