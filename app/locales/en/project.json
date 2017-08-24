@@ -10,5 +10,10 @@
     "modal_add_task_btn_add": "Add",
     "left_info_title": "Information",
     "content_list_task": "Tasks list",
-    "content_btn_open_add_task_modal": "Add task"
+    "content_btn_open_add_task_modal": "Add task",
+    "modal_add_task_label_title": "Title",
+    "modal_add_task_label_type": "Type",
+    "modal_add_task_label_date_finish": "Finish date",
+    "modal_add_task_label_dest": "For",
+    "modal_add_task_label_desc": "Description"
 }
