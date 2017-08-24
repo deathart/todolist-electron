@@ -92,7 +92,6 @@ function createWindow() {
 
     if (settings.get('dev')) {
         mainWindow.webContents.openDevTools();
-        require('electron-debug')({ showDevTools: true });
     }
 
     mainWindow.on('closed', () => {
