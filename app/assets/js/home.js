@@ -26,7 +26,8 @@ handlebars.registerHelper('i18n', function(str) {
 let template = handlebars.compile(document.documentElement.innerHTML);
 document.documentElement.innerHTML = template();
 
-$("#home_menu > ul > li").click(function() {
+$("#home_menu > ul > li").click(function(e) {
+    e.preventDefault();
 
     let page_name = $(this).data("page");
     let block = ".block_" + page_name;
@@ -72,9 +73,11 @@ $.each(db.get('projects').value(), function(key, value) {
     $(".list_myprojects").append('<li class="list-group-item list-group-item-action flex-column align-items-start project_click" data-projectid="' + value.id + '"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">' + value.title + '</h5><small>' + i18n.__({ phrase: "content_myproject_list_date_create", locale: "home" }) + value.date_create + '</small></div><p class="mb-1">' + value.desc + '</p><small>' + value.date_lastup + '<div class="float-right"><i class="fa fa-trash-o delete-project" aria-hidden="true"></i></div></small></li>');
 });
 
-$(".project_click").click(function() {
+$(".project_click").click(function(e) {
+    e.preventDefault();
     let id_project = $(this).data("projectid");
     ipcRenderer.send('change-page', { "name": 'project', "project_id": id_project });
+    return false;
 });
 
 $(".delete-project").click(function(e) {
