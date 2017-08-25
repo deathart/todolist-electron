@@ -103,7 +103,7 @@ $('.addTask-modal').click(function(ev) {
         db.get('projects_info').push({ id: futur_id, projectId: project_id, title: task_title, date_create: task_date_create, type: task_type, dest: task_dest, desc: task_desc, date_finish: task_date_finish, progress: 0 }).write();
         db.get('projects').find({ id: project_id }).assign({ date_lastup: task_date_create }).write();
 
-        $(".list_task").append('<tr class="table-light" data-taskId="' + futur_id + '"><th scope="row">' + futur_id + '</th><td>' + task_title + '</td><td>' + task_type + '</td><td></td></tr>');
+        $(".list_task").append('<tr class="table-light" data-taskId="' + futur_id + '"><th scope="row">' + futur_id + '</th><td>' + task_title + '</td><td>' + task_type + '</td><td><div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div></div></td></tr>');
 
         $("#inputTitre").val("");
         $("#inputType").val("");
@@ -120,5 +120,5 @@ $('.addTask-modal').click(function(ev) {
 });
 
 $.each(db.get('projects_info').filter({ projectId: project_id }).value(), function(key, value) {
-    $(".list_task").append('<tr class="table-light" data-taskId="' + value.id + '"><th scope="row">' + value.id + '</th><td>' + value.title + '</td><td>' + value.type + '</td><td></td></tr>');
+    $(".list_task").append('<tr class="table-light" data-taskId="' + value.id + '"><th scope="row">' + value.id + '</th><td>' + value.title + '</td><td>' + value.type + '</td><td><div class="progress"><div class="progress-bar" role="progressbar" style="width: ' + value.progress + '%;" aria-valuenow="' + value.progress + '" aria-valuemin="0" aria-valuemax="100">' + value.progress + '%</div></div></td></tr>');
 });
