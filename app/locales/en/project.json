@@ -15,5 +15,8 @@
     "modal_add_task_label_type": "Type",
     "modal_add_task_label_date_finish": "Finish date",
     "modal_add_task_label_dest": "For",
-    "modal_add_task_label_desc": "Description"
+    "modal_add_task_label_desc": "Description",
+    "content_list_task_table_title": "Title",
+    "content_list_task_table_type": "Type",
+    "content_list_task_table_progress": "Progression"
 }
