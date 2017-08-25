@@ -70,3 +70,7 @@ body {
 .list_task>tr:hover {
     cursor: pointer;
 }
+
+.btn {
+    cursor: pointer;
+}

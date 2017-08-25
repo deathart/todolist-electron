@@ -42,13 +42,20 @@ $(".edit-project").click(function(e) {
 
     $('#ModalEditProject').modal('show');
 
-    $(".close-modal").click(function(e) {
-        e.preventDefault();
-        $('#ModalEditProject').modal('hide');
-        return false;
-    });
+    return false;
+});
+
+$(".add_taskopenmodal").click(function(e) {
+    e.preventDefault();
+
+    $('#ModalAddTask').modal('show');
 
     return false;
+});
+
+$(".close-modal").click(function() {
+    var modal_name = $(this).parents(".modal").attr('id');
+    $('#' + modal_name).modal('hide');
 });
 
 
@@ -61,21 +68,6 @@ $(".save-modal").click(function(e) {
     if (title_project) {
         db.get('projects').find({ title: project_info.title }).assign({ title: title_project, desc: desc_project }).write();
     }
-    return false;
-
-});
-
-
-$(".add_taskopenmodal").click(function(e) {
-    e.preventDefault();
-
-    $('#ModalAddTask').modal('show');
-
-    $(".close-modal").click(function(eve) {
-        eve.preventDefault();
-        $('#ModalAddTask').modal('hide');
-        return false;
-    });
     return false;
 
 });
