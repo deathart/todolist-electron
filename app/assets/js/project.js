@@ -100,8 +100,10 @@ $('.addTask-modal').click(function(ev) {
     }
 
     if (task_title && task_type) {
-        db.get('projects_info').push({ id: futur_id, projectId: project_id, title: task_title, date_create: task_date_create, type: task_type, dest: task_dest, desc: task_desc, date_finish: task_date_finish }).write();
+        db.get('projects_info').push({ id: futur_id, projectId: project_id, title: task_title, date_create: task_date_create, type: task_type, dest: task_dest, desc: task_desc, date_finish: task_date_finish, progress: 0 }).write();
         db.get('projects').find({ id: project_id }).assign({ date_lastup: task_date_create }).write();
+
+        $(".list_task").append('<tr class="table-light" data-taskId="' + futur_id + '"><th scope="row">' + futur_id + '</th><td>' + task_title + '</td><td>' + task_type + '</td><td></td></tr>');
 
         $("#inputTitre").val("");
         $("#inputType").val("");
@@ -113,8 +115,10 @@ $('.addTask-modal').click(function(ev) {
 
     }
 
-    //Add to list
-
     return false;
 
+});
+
+$.each(db.get('projects_info').filter({ projectId: project_id }).value(), function(key, value) {
+    $(".list_task").append('<tr class="table-light" data-taskId="' + value.id + '"><th scope="row">' + value.id + '</th><td>' + value.title + '</td><td>' + value.type + '</td><td></td></tr>');
 });

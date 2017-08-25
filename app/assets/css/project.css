@@ -39,6 +39,10 @@ body {
     padding-bottom: 1%;
 }
 
+.table-light {
+    color: #000000;
+}
+
 .add_taskopenmodal {
     cursor: pointer;
 }
@@ -61,4 +65,8 @@ body {
 
 #BtnHome:hover {
     background-color: #1B1037;
+}
+
+.list_task>tr:hover {
+    cursor: pointer;
 }
