@@ -18,5 +18,6 @@
     "modal_add_task_label_desc": "Description",
     "content_list_task_table_title": "Titre",
     "content_list_task_table_type": "Type",
-    "content_list_task_table_progress": "Progression"
+    "content_list_task_table_progress": "Progression",
+    "content_list_task_table_action": "Actions"
 }

@@ -89,3 +89,12 @@ body {
     border-collapse: collapse;
     background-color: #fdfdfe;
 }
+
+.edit-task {
+    color: #FFA500;
+}
+
+.close-task {
+    margin-left: 5px;
+    color: #FF0000;
+}
