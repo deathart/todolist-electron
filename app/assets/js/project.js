@@ -146,7 +146,10 @@ $(".edit-task").click(function() {
 });
 
 $(".delete-task").click(function() {
-
+    let task_id = $(this).parents("tr").data("taskid");
+    $(this).parents("tr").remove();
+    $(".collapse_info_" + task_id).parents("tr").remove();
+    db.get('projects_info').remove({ "id": task_id }).write();
 });
 
 function UpdateDateProject() {
