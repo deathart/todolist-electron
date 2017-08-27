@@ -67,6 +67,7 @@ $(".save-modal").click(function(e) {
 
     if (title_project) {
         db.get('projects').find({ title: project_info.title }).assign({ title: title_project, desc: desc_project }).write();
+        UpdateDateProject()
     }
     return false;
 
@@ -93,7 +94,7 @@ $('.addTask-modal').click(function(ev) {
 
     if (task_title && task_type) {
         db.get('projects_info').push({ id: futur_id, projectId: project_id, title: task_title, date_create: task_date_create, type: task_type, dest: task_dest, desc: task_desc, date_finish: task_date_finish, progress: 0, close: false }).write();
-        db.get('projects').find({ id: project_id }).assign({ date_lastup: task_date_create }).write();
+        UpdateDateProject()
 
         $(".list_task").append('<tr data-toggle="collapse" data-target=".collapse_info_' + futur_id + '" class="table-light" data-taskId="' + futur_id + '"><th scope="row">' + futur_id + '</th><td>' + task_title + '</td><td>' + task_type + '</td><td><div class="progress"><div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div></div></td><td style="text-align: center;"><i class="fa fa-pencil-square-o edit-task" aria-hidden="true"></i><i class="fa fa-trash delete-task" aria-hidden="true"></i><i class="fa fa-check-square-o close-task" aria-hidden="true"></i></td></tr><tr><td colspan="4" class="hiddenRow"><div class="collapse collapse_info_' + futur_id + '"><div class="info_task_col">' + task_desc + '</div></div></td></tr>');
 
@@ -137,6 +138,7 @@ $(".close-task").click(function() {
         db.get('projects_info').find({ id: task_id }).assign({ close: false }).write();
         $(this).parents("tr").removeClass("table-success").addClass("table-light");
     }
+    UpdateDateProject()
 });
 
 $(".edit-task").click(function() {
@@ -146,3 +148,8 @@ $(".edit-task").click(function() {
 $(".delete-task").click(function() {
 
 });
+
+function UpdateDateProject() {
+    let date_now = moment().format("DD-MM-YYYY à HH:mm");
+    db.get('projects').find({ id: project_id }).assign({ date_lastup: date_now }).write();
+}
