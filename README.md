@@ -16,6 +16,7 @@ Pour pouvoir l'installateur rien de plus simple, télécharger les sources si de
 # Screens
 ![Screen 1](https://img4.hostingpics.net/pics/979159Capture.png)
 ![Screen 2](https://img4.hostingpics.net/pics/763617Capture2.png)
+![Screen 3](https://img11.hostingpics.net/pics/654625Capture3.png)
 
 # Tests
 For tests we use jshint
