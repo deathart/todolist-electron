@@ -59,7 +59,7 @@ $(".close-modal").click(function() {
 });
 
 
-$(".save-modal").click(function(e) {
+$(".EditProject-modal").click(function(e) {
     e.preventDefault();
 
     let title_project = $("#inputName").val(),
