@@ -10,8 +10,6 @@ const moment = require('moment');
 
 db.defaults({ projects: [], projects_info: [] }).write();
 
-document.title += " [v" + process.env.npm_package_version + "]";
-
 i18n.configure({
     locale: "home",
     directory: __dirname + '/../locales/' + settings.get('lang') + "/"
@@ -23,6 +21,8 @@ handlebars.registerHelper('i18n', function(str) {
 
 let template = handlebars.compile(document.documentElement.innerHTML);
 document.documentElement.innerHTML = template();
+
+document.title += " [v" + process.env.npm_package_version + "]";
 
 $("#home_menu > ul > li").click(function(e) {
     e.preventDefault();
