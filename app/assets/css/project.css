@@ -98,3 +98,8 @@ body {
     margin-left: 5px;
     color: #FF0000;
 }
+
+.close-task {
+    margin-left: 5px;
+    color: #008000;
+}
