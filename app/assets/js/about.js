@@ -17,4 +17,4 @@ handlebars.registerHelper('i18n', function(str) {
 let template = handlebars.compile(document.documentElement.innerHTML);
 document.documentElement.innerHTML = template();
 
-document.title += " [v" + process.env.npm_package_version + "]";
+document.title += " [v" + package.version + "]";

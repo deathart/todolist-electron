@@ -7,6 +7,7 @@ const settings = require('electron-settings');
 const handlebars = require("handlebars");
 const i18n = require("i18n");
 const moment = require('moment');
+const package = require(__dirname + '/../../package.json');
 
 db.defaults({ projects: [], projects_info: [] }).write();
 
@@ -22,7 +23,7 @@ handlebars.registerHelper('i18n', function(str) {
 let template = handlebars.compile(document.documentElement.innerHTML);
 document.documentElement.innerHTML = template();
 
-document.title += " [v" + process.env.npm_package_version + "]";
+document.title += " [v" + package.version + "]";
 
 $("#home_menu > ul > li").click(function(e) {
     e.preventDefault();

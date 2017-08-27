@@ -6,6 +6,7 @@ const settings = require('electron-settings');
 const handlebars = require("handlebars");
 const i18n = require("i18n");
 const moment = require('moment');
+const package = require(__dirname + '/../../package.json');
 
 let project_id = ipcRenderer.sendSync('getproject');
 let project_info = db.get('projects').filter({ id: project_id }).value()[0];
@@ -21,7 +22,7 @@ handlebars.registerHelper('i18n', function(str) {
 let template = handlebars.compile(document.documentElement.innerHTML);
 document.documentElement.innerHTML = template();
 
-document.title += " (" + project_info.title + ") [v" + process.env.npm_package_version + "]";
+document.title += " (" + project_info.title + ") [v" + package.version + "]";
 
 $("#config > p").prepend(project_info.title);
 
