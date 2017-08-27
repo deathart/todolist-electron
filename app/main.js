@@ -135,21 +135,27 @@ ipcMain.on('change-dev', function(event, arg) {
 });
 
 function OpenAboutWindow(win) {
+
     let aboutwin = new BrowserWindow({
         width: 350,
         height: 400,
         parent: mainWindow,
         modal: true,
         show: false,
-        alwayOnTop: true,
         resizable: false,
         minimizable: false,
         maximizable: false
     });
+
     aboutwin.loadURL(`file://${__dirname}/html/about.html`);
     aboutwin.setMenu(null);
     aboutwin.webContents.closeDevTools();
     aboutwin.once('ready-to-show', () => {
         aboutwin.show();
     });
+
+    if (settings.get('dev')) {
+        aboutwin.webContents.openDevTools();
+    }
+
 }
