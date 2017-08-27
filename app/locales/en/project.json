@@ -19,5 +19,7 @@
     "content_list_task_table_title": "Title",
     "content_list_task_table_type": "Type",
     "content_list_task_table_progress": "Progression",
-    "content_list_task_table_action": "Action"
+    "content_list_task_table_action": "Action",
+    "modal_update_task_btn_ok": "Update",
+    "modal_update_task_label_progress": "Progression"
 }
