@@ -184,14 +184,7 @@ $(".edit-task").click(function() {
 
     $(".UpdateTask-modal").click(function() {
 
-        update_title.val();
-        update_type.val();
-        update_datefinish.val();
-        update_dest.val();
-        update_desc.val();
-        update_progress.val();
-
-        if (update_progress == 100) {
+        if (update_progress.val() == 100) {
             update_close = true;
         }
 
