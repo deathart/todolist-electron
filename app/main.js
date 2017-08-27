@@ -7,9 +7,6 @@ const i18n = require("i18n");
 let mainWindow;
 let mainWindowState;
 
-i18n.configure({
-    directory: __dirname + '/locales/' + settings.get('lang') + "/"
-});
 
 if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron")) {
     fs.mkdirSync(process.env.USERPROFILE + "/Documents/todolist-electron");
@@ -26,14 +23,6 @@ if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron")) {
             }
         });
     }
-}
-
-if (!settings.has('lang')) {
-    settings.set('lang', "fr");
-}
-
-if (!settings.has('dev')) {
-    settings.set('dev', false);
 }
 
 function createWindow() {
@@ -88,6 +77,7 @@ function createWindow() {
 
     mainWindow.once('ready-to-show', () => {
         mainWindowState.manage(mainWindow);
+        mainWindow.show();
     });
 
     if (settings.get('dev')) {
@@ -99,7 +89,22 @@ function createWindow() {
     });
 }
 
-app.on('ready', createWindow);
+//app.on('ready', createWindow);
+app.on('ready', function() {
+    if (!settings.has('lang')) {
+        settings.set('lang', "fr");
+    }
+
+    if (!settings.has('dev')) {
+        settings.set('dev', false);
+    }
+
+    i18n.configure({
+        directory: __dirname + '/locales/fr/'
+    });
+    createWindow();
+
+});
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
