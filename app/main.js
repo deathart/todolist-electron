@@ -7,7 +7,6 @@ const i18n = require("i18n");
 let mainWindow;
 let mainWindowState;
 
-
 if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron")) {
     fs.mkdirSync(process.env.USERPROFILE + "/Documents/todolist-electron");
     fs.writeFile(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json", "", (err) => {
@@ -89,7 +88,6 @@ function createWindow() {
     });
 }
 
-//app.on('ready', createWindow);
 app.on('ready', function() {
     if (!settings.has('lang')) {
         settings.set('lang', "fr");
