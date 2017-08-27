@@ -85,8 +85,8 @@ $('.addTask-modal').click(function(ev) {
     let futur_id = 0;
 
     if (db.get('projects_info').size().value() > 0) {
-        let last_project = db.get('projects_info').takeRight(1).value();
-        futur_id = last_project[0].id + 1;
+        let last_task = db.get('projects_info').takeRight(1).value();
+        futur_id = last_task[0].id + 1;
     } else {
         futur_id = 1;
     }
