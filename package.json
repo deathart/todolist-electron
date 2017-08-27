@@ -1,11 +1,15 @@
 {
     "name": "todolist-electron",
     "version": "1.0.0",
-    "description": "Todolist write with Node JS & Electron",
+    "productName": "Todolist Electron",
+    "description": "Todo list developed in javascript with Node JS & Electron",
     "main": "app/main.js",
     "scripts": {
+        "postinstall": "electron-builder install-app-deps",
         "test": "jshint --reporter=reporter.js --exclude=app/assets/js/vendor/ app",
-        "start": "electron ."
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder"
     },
     "repository": {
         "type": "git",
@@ -20,13 +24,59 @@
         "javascript"
     ],
     "author": "deathart",
-    "license": "GPL-3.0",
+    "copyright": "©deathart",
+    "license": {
+        "type": "GPL-3.0",
+        "url": "https://github.com/deathart/todolist-electron/blob/master/LICENSE"
+    },
     "bugs": {
         "url": "https://github.com/deathart/todolist-electron/issues"
     },
     "homepage": "https://github.com/deathart/todolist-electron#readme",
+    "build": {
+        "appId": "todolist.electron",
+        "copyright": "© deathart",
+        "asar": false,
+        "productName": "Todolist Electron",
+        "mac": {
+            "category": "public.app-category.productivity",
+            "target": [
+                "dmg",
+                "zip"
+            ]
+        },
+        "dmg": {
+            "backgroundColor": "#cdcdcd"
+        },
+        "linux": {
+            "maintainer": "deathart",
+            "category": "Utility",
+            "description": "Todo list developed in javascript with Node JS & Electron",
+            "packageCategory": "Utility",
+            "target": [
+                "deb",
+                "rpm",
+                "zip"
+            ]
+        },
+        "win": {
+            "target": [
+                "zip",
+                "nsis"
+            ]
+        },
+        "files": [
+            "node_modules",
+            "app",
+            "reporter.js",
+            "package.json",
+            "LICENSE"
+        ],
+        "directories": {
+            "output": "./releases"
+        }
+    },
     "dependencies": {
-        "electron": "^1.7.5",
         "electron-debug": "^1.4.0",
         "electron-settings": "^3.1.1",
         "electron-window-state": "^4.1.1",
@@ -37,6 +87,8 @@
         "moment": "^2.18.1"
     },
     "devDependencies": {
+        "electron": "^1.7.5",
+        "electron-builder": "^19.24.1",
         "jshint": "^2.9.5",
         "jshint-stylish": "^2.2.1",
         "jshint-stylish-summary": "^0.1.2"
