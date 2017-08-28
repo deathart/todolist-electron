@@ -16,6 +16,8 @@ To be able to the installer nothing more simple, to download the sources if abov
     npm install
     npm start
     
+Or download [installer](https://github.com/deathart/todolist-electron/releases/latest) 
+    
 # Screens
 ![Screen 1](https://img4.hostingpics.net/pics/979159Capture.png)
 ![Screen 2](https://img4.hostingpics.net/pics/763617Capture2.png)
