@@ -30,12 +30,14 @@ For tests we use jshint
 
 # Todo
 - [ ] Online todolist
-- [ ] Multy theme
+- [ ] Multiple theme
 - [ ] Crypt projects & tasks
 - [ ] Linux & Mac version
-- [ ] Angulare version
+- [ ] Angular version
 - [ ] Keyboard shortcode
 - [ ] Private Projects (Password Protection)
 - [ ] More information for update
+- [ ] Add new language
+- [ ] Import project (File & Url & Ftp)
 - [x] i18n
 - [x] Automatique update
