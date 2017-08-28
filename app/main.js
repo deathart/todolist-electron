@@ -1,4 +1,4 @@
-const { ipcMain, electron, app, BrowserWindow, Menu } = require('electron');
+const { ipcMain, electron, app, BrowserWindow, Menu, dialog } = require('electron');
 const windowStateKeeper = require('electron-window-state');
 const fs = require('fs');
 const settings = require('electron-settings');
@@ -7,6 +7,8 @@ const { autoUpdater } = require("electron-updater");
 
 let mainWindow;
 let mainWindowState;
+
+autoUpdater.autoDownload = false;
 
 if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron")) {
     fs.mkdirSync(process.env.USERPROFILE + "/Documents/todolist-electron");
@@ -25,10 +27,29 @@ if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron")) {
     }
 }
 
-autoUpdater.on('update-downloaded', (ev, info) => {
-    setTimeout(function() {
-        autoUpdater.quitAndInstall();
-    }, 5000);
+autoUpdater.on('update-available', (ev, info) => {
+    let release_note = ev.releaseNotes;
+    dialog.showMessageBox({
+        type: "info",
+        title: "Update is available",
+        message: "La mise à jours " + ev.version + " est disponible",
+        //detail: ev.releaseNotes,
+        buttons: ["Yes", "No"]
+    }, function(response) {
+        if (response == 0) {
+
+            autoUpdater.downloadUpdate();
+
+            autoUpdater.on('download-progress', (info) => {
+                let update_progress = info.percent;
+            });
+
+            autoUpdater.on('update-downloaded', (ev, info) => {
+                autoUpdater.quitAndInstall();
+            });
+        }
+    });
+
 });
 
 app.on('ready', function() {
