@@ -27,31 +27,6 @@ if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron")) {
     }
 }
 
-autoUpdater.on('update-available', (ev, info) => {
-    let release_note = ev.releaseNotes;
-    dialog.showMessageBox({
-        type: "info",
-        title: "Update is available",
-        message: "La mise à jours " + ev.version + " est disponible",
-        //detail: ev.releaseNotes,
-        buttons: ["Yes", "No"]
-    }, function(response) {
-        if (response == 0) {
-
-            autoUpdater.downloadUpdate();
-
-            autoUpdater.on('download-progress', (info) => {
-                let update_progress = info.percent;
-            });
-
-            autoUpdater.on('update-downloaded', (ev, info) => {
-                autoUpdater.quitAndInstall();
-            });
-        }
-    });
-
-});
-
 app.on('ready', function() {
     if (!settings.has('lang')) {
         settings.set('lang', "fr");
@@ -65,9 +40,9 @@ app.on('ready', function() {
         directory: __dirname + '/locales/fr/'
     });
 
-    autoUpdater.checkForUpdates();
-
     createWindow();
+
+    autoUpdater.checkForUpdates();
 
 });
 
@@ -163,7 +138,7 @@ function createWindow() {
                 label: i18n.__({ phrase: "menu_Other_update", locale: "general" }),
                 accelerator: 'CmdOrCtrl+U',
                 click(menuItem, currentWindow) {
-
+                    autoUpdater.checkForUpdates();
                 }
             },
             {
@@ -197,3 +172,28 @@ function createWindow() {
         mainWindow = null;
     });
 }
+
+autoUpdater.on('update-available', (ev, info) => {
+    let release_note = ev.releaseNotes;
+    dialog.showMessageBox({
+        type: "info",
+        title: "Update is available",
+        message: "La mise à jours " + ev.version + " est disponible",
+        //detail: ev.releaseNotes,
+        buttons: ["Yes", "No"]
+    }, function(response) {
+        if (response == 0) {
+
+            autoUpdater.downloadUpdate();
+
+            autoUpdater.on('download-progress', (info) => {
+                let update_progress = info.percent;
+            });
+
+            autoUpdater.on('update-downloaded', (ev, info) => {
+                autoUpdater.quitAndInstall();
+            });
+        }
+    });
+
+});
