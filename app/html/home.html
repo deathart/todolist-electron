@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>TodoList Electron - {{ i18n "title" }}</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor/font-awesome.min.css" />
     <link rel="stylesheet" href="../assets/css/home.css" />
+    <link rel="stylesheet" href="../assets/css/vendor/summernote.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -50,7 +51,7 @@
                                         </div>
                                         <label for="inputDesc" class="col-sm-2 col-form-label">{{ i18n "form_add_project_desc" }}</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control" id="inputDesc" rows="3"></textarea>
+                                            <textarea class="form-control" id="inputDesc" rows="5"></textarea>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-light float-right">{{ i18n "form_add_project_submit" }}</button>
@@ -84,6 +85,12 @@
             </div>
         </div>
     </div>
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
+    <script type="text/javascript" src="../assets/js/vendor/popper.min.js"></script>
+    <script type="text/javascript" src="../assets/js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/vendor/summernote.min.js"></script>
     <script type="text/javascript" src="../assets/js/home.js"></script>
 </body>
 

@@ -46,7 +46,7 @@ $(".add_project").submit(function(e) {
     e.preventDefault();
 
     let title_project = $("#inputName").val();
-    let desc_project = $("#inputDesc").val();
+    let desc_project = $("#inputDesc").summernote('code');
 
     let futur_id = 0;
 
@@ -122,3 +122,5 @@ $("#InputDevMode").change(function() {
         ipcRenderer.send('change-dev', { "dev": false });
     }
 });
+
+$("#inputDesc").summernote();

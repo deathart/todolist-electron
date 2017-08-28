@@ -37,7 +37,7 @@ $(".edit-project").click(function(e) {
     e.preventDefault();
 
     $("#inputName").val(project_info.title);
-    $("#inputDesc").val(project_info.desc);
+    $("#inputDescP").summernote('code', project_info.desc);
 
     $('#ModalEditProject').modal('show');
 
@@ -61,12 +61,15 @@ $(".close-modal").click(function() {
 $(".EditProject-modal").click(function(e) {
     e.preventDefault();
 
+    $("#inputDescP").summernote();
+
     let title_project = $("#inputName").val(),
-        desc_project = $("#inputDesc").val();
+        desc_project = $("#inputDescP").summernote('code');
 
     if (title_project) {
         db.get('projects').find({ title: project_info.title }).assign({ title: title_project, desc: desc_project }).write();
         UpdateDateProject();
+        $("#ModalEditProject").modal('hide');
     }
     return false;
 
@@ -81,11 +84,13 @@ $('.addTask-modal').click(function(ev) {
     let task_input_dest = $(".add_task").find("#inputDest");
     let task_input_desc = $(".add_task").find("#inputDescr");
 
+    task_input_desc.summernote();
+
     let task_title = task_input_title.val();
     let task_type = task_input_type.val();
     let task_date_finish = task_input_date_finish.val();
     let task_dest = task_input_dest.val();
-    let task_desc = task_input_desc.val();
+    let task_desc = task_input_desc.summernote('code');
     let task_date_create = moment().format("DD-MM-YYYY à HH:mm");
 
     let futur_id = 0;
@@ -170,13 +175,15 @@ $(".edit-task").click(function() {
     let update_progress = $(".update_task").find("#inputProgress");
     let update_close = false;
 
+    update_desc.summernote();
+
     $('#ModalUpdateTask').on('shown.bs.modal', function(e) {
 
         update_title.val(task.title);
         update_type.val(task.type);
         update_datefinish.val(task.date_finish);
         update_dest.val(task.dest);
-        update_desc.val(task.desc);
+        update_desc.summernote('code', task.desc);
         update_progress.val(task.progress);
 
     });
@@ -187,7 +194,7 @@ $(".edit-task").click(function() {
             update_close = true;
         }
 
-        db.get('projects_info').find({ id: task_id }).assign({ title: update_title.val(), type: update_type.val(), dest: update_dest.val(), desc: update_desc.val(), date_finish: update_datefinish.val(), progress: update_progress.val(), close: update_close }).write();
+        db.get('projects_info').find({ id: task_id }).assign({ title: update_title.val(), type: update_type.val(), dest: update_dest.val(), desc: update_desc.summernote('code'), date_finish: update_datefinish.val(), progress: update_progress.val(), close: update_close }).write();
         UpdateDateProject();
 
         $('#ModalUpdateTask').modal('hide');

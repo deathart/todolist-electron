@@ -6,6 +6,7 @@
     <title>TodoList Electron - {{ i18n "title" }}</title>
     <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/vendor/font-awesome.min.css" />
+    <link rel="stylesheet" href="../assets/css/vendor/summernote.css" />
     <link rel="stylesheet" href="../assets/css/project.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -67,7 +68,7 @@
                         <div class="form-group row">
                             <label for="inputDesc" class="col-sm-2 col-form-label">{{ i18n "modal_edit_project_label_desc" }}</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" id="inputDesc" rows="3"></textarea>
+                                <textarea class="form-control" id="inputDescP" rows="3"></textarea>
                             </div>
                         </div>
                     </form>
@@ -190,8 +191,9 @@
     <script>
         window.$ = window.jQuery = require('jquery');
     </script>
-    <script src="../assets/js/vendor/popper.min.js"></script>
-    <script src="../assets/js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/vendor/popper.min.js"></script>
+    <script type="text/javascript" src="../assets/js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/vendor/summernote.min.js"></script>
     <script type="text/javascript" src="../assets/js/project.js"></script>
 </body>
 
