@@ -1,14 +1,17 @@
 [![npm](https://img.shields.io/npm/v/npm.svg)]() [![Dependencies](https://david-dm.org/deathart/todolist-electron.svg)](https://david-dm.org/deathart/todolist-electron) 
 [![licence](https://img.shields.io/badge/licence-GPL--3.0-blue.svg)]()
 
-# todolist-electron
+# Todolist Electron
 Todo list developed in javascript with Node JS & Electron.
 
 # Help
 This application is developed with little knowledge that allows to learn even more, while having fun, the app is not perfect away from it, that's why I ask for the help of internet and It is wonderful, not hesitate to give ideas, constructive criticism, send your improvements etc ...
 
+# Download (Only windows x64 version is available for the moment)
+To download it nothing more simple, go to the [last release](https://github.com/deathart/todolist-electron/releases/latest) on github and download the .exe (it is an installer with system of update)
+
 # Installation
-Pour pouvoir l'installateur rien de plus simple, télécharger les sources si dessus et avec l'invitation de commande tappez:
+To be able to the installer nothing more simple, to download the sources if above and with the invitation of command
 
     npm install
     npm start
