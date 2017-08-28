@@ -44,9 +44,9 @@ app.on('ready', function() {
         directory: __dirname + '/locales/fr/'
     });
 
-    createWindow();
-
     autoUpdater.checkForUpdates();
+
+    createWindow();
 
 });
 
@@ -167,6 +167,10 @@ function createWindow() {
     if (settings.get('dev')) {
         mainWindow.webContents.openDevTools();
     }
+
+    mainWindow.on('close', () => {
+        mainWindowState.saveState(mainWindow);
+    });
 
     mainWindow.on('closed', () => {
         mainWindow = null;
