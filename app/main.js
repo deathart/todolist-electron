@@ -60,11 +60,11 @@ app.on('activate', () => {
 
 ipcMain.on('change-page', function(event, arg) {
     let page_name = arg.name;
-    mainWindow.webContents.loadURL(`file://${__dirname}/html/` + page_name + `.html`);
+    mainWindow.webContents.loadURL(`file://${__dirname}/html/${page_name}.html`);
     if (arg.name == "project") {
         let projectID = arg.project_id;
-        ipcMain.on('getproject', (event, arg) => {
-            event.returnValue = projectID;
+        ipcMain.on('getproject', (evente, arga) => {
+            evente.returnValue = projectID;
         });
 
     }
