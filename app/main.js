@@ -43,11 +43,10 @@ app.on('ready', function() {
     i18n.configure({
         directory: __dirname + '/locales/fr/'
     });
+
     createWindow();
 
-    if (!process.env.NODE_ENV === 'development') {
-        autoUpdater.checkForUpdates();
-    }
+    autoUpdater.checkForUpdates();
 
 });
 
