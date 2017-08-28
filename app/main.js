@@ -61,12 +61,10 @@ app.on('activate', () => {
 ipcMain.on('change-page', function(event, arg) {
     let page_name = arg.name;
     mainWindow.webContents.loadURL(`file://${__dirname}/html/${page_name}.html`);
-    if (arg.name == "project") {
-        let projectID = arg.project_id;
-        ipcMain.on('getproject', (evente, arga) => {
-            evente.returnValue = projectID;
+    if (page_name == "project") {
+        ipcMain.once('getproject', (evente, arga) => {
+            evente.returnValue = arg.project_id;
         });
-
     }
 });
 
