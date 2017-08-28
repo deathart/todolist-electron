@@ -2,5 +2,10 @@
     "menu_file": "Fichier",
     "menu_file_exit": "Quitter",
     "menu_Other_update": "Mise à jour",
-    "menu_Other_info": "Informations"
+    "menu_Other_info": "Informations",
+    "update_available_title": "Une mise à jours est disponible",
+    "update_available_message_one": "La mise à jours ",
+    "update_available_message_two": " est disponible",
+    "update_available_btn_yes": "Mettre à jours",
+    "update_available_btn_no": "Annuler"
 }

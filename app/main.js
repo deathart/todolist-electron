@@ -177,10 +177,9 @@ autoUpdater.on('update-available', (ev, info) => {
     let release_note = ev.releaseNotes;
     dialog.showMessageBox({
         type: "info",
-        title: "Update is available",
-        message: "La mise à jours " + ev.version + " est disponible",
-        //detail: ev.releaseNotes,
-        buttons: ["Yes", "No"]
+        title: i18n.__({ phrase: "update_available_title", locale: "general" }),
+        message: i18n.__({ phrase: "update_available_message_one", locale: "general" }) + ev.version + i18n.__({ phrase: "update_available_message_two", locale: "general" }),
+        buttons: [i18n.__({ phrase: "update_available_btn_yes", locale: "general" }), i18n.__({ phrase: "update_available_btn_no", locale: "general" })]
     }, function(response) {
         if (response == 0) {
 

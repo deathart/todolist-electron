@@ -2,5 +2,10 @@
     "menu_file": "File",
     "menu_file_exit": "Exit",
     "menu_Other_update": "Update",
-    "menu_Other_info": "About"
+    "menu_Other_info": "About",
+    "update_available_title": "Update available",
+    "update_available_message_one": "Upgrade ",
+    "update_available_message_two": " is available",
+    "update_available_btn_yes": "Update",
+    "update_available_btn_no": "Cancel"
 }
