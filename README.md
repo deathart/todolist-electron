@@ -27,3 +27,15 @@ Or download [installer](https://github.com/deathart/todolist-electron/releases/l
 For tests we use jshint
 
     npm test
+
+# Todo
+- [ ] Online todolist
+- [ ] Multy theme
+- [ ] Crypt projects & tasks
+- [ ] Linux & Mac version
+- [ ] Angulare version
+- [ ] Keyboard shortcode
+- [ ] Private Projects (Password Protection)
+- [ ] More information for update
+- [x] i18n
+- [x] Automatique update
