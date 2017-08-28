@@ -46,7 +46,7 @@ $(".edit-project").click(function(e) {
 
 $(".add_taskopenmodal").click(function(e) {
     e.preventDefault();
-
+    $(".add_task").find("#inputDescr").summernote();
     $('#ModalAddTask').modal('show');
 
     return false;
@@ -83,8 +83,6 @@ $('.addTask-modal').click(function(ev) {
     let task_input_date_finish = $(".add_task").find("#inputDateFinish");
     let task_input_dest = $(".add_task").find("#inputDest");
     let task_input_desc = $(".add_task").find("#inputDescr");
-
-    task_input_desc.summernote();
 
     let task_title = task_input_title.val();
     let task_type = task_input_type.val();
