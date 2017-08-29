@@ -8,8 +8,7 @@
         "postinstall": "electron-builder install-app-deps",
         "test": "jshint --reporter=reporter.js --exclude=app/assets/js/vendor/ app",
         "start": "electron .",
-        "pack": "electron-builder --dir",
-        "dist": "electron-builder"
+        "build-win": "electron-builder --win --ia32 --x64"
     },
     "repository": {
         "type": "git",
