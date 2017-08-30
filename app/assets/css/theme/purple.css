@@ -1,0 +1,28 @@
+#home_menu
+{
+    background: #312450;
+}
+
+#home_content
+{
+    background-color: #5e42a6;
+}
+
+#config
+{
+    background-color: #312450;
+}
+
+#content
+{
+    background-color: #5e42a6;
+}
+
+#BtnHome
+{
+    background-color: #312450;
+}
+#BtnHome:hover
+{
+    background-color: #1b1037;
+}

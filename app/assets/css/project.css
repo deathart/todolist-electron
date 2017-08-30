@@ -13,8 +13,7 @@ body
     padding: 2%;
 
     color: #fff;
-    border-right: 1px solid #fff; 
-    background-color: #312450;
+    border-right: 1px solid #fff;
 }
 .container-fluid #config p
 {
@@ -38,8 +37,7 @@ body
 {
     padding: 1%;
 
-    color: #fff; 
-    background-color: #5e42a6;
+    color: #fff;
 }
 .container-fluid #content h5
 {
@@ -129,10 +127,4 @@ body
     border: none;
     border-radius: 10px;
     outline: none;
-    background-color: #312450;
-}
-
-#BtnHome:hover
-{
-    background-color: #1b1037;
 }

@@ -36,6 +36,10 @@ app.on('ready', function() {
         settings.set('dev', false);
     }
 
+    if (!settings.has('theme')) {
+        settings.set('theme', "purple");
+    }
+
     i18n.configure({
         directory: __dirname + '/locales/fr/'
     });

@@ -18,5 +18,8 @@
     "settings_lang_en": "Anglais",
     "content_myproject_list_date_create": "Créer le ",
     "settings_dev": "Mode dévellopement",
-    "content_myproject_list_date_last_update": "Dernière mise à jours "
+    "content_myproject_list_date_last_update": "Dernière mise à jours ",
+    "settings_theme": "settings_theme",
+    "settings_theme_choice": "Thèmes",
+    "settings_theme_purple": "Violet"
 }

@@ -113,6 +113,15 @@ if (settings.get('dev') == true) {
     $("#InputDevMode").prop('checked', true);
 }
 
+$("#SettingsTheme").change(function() {
+
+    settings.set('theme', $(this).val());
+
+    location.reload();
+
+});
+
+
 $("#InputDevMode").change(function() {
     if ($(this).is(":checked")) {
         settings.set('dev', true);
@@ -124,3 +133,20 @@ $("#InputDevMode").change(function() {
 });
 
 $("#inputDesc").summernote();
+
+let fetchStyle = function(url) {
+    return new Promise((resolve, reject) => {
+        let link = document.createElement('link');
+        link.type = 'text/css';
+        link.rel = 'stylesheet';
+        link.onload = function() {
+            resolve();
+        };
+        link.href = "../assets/css/theme/" + url + ".css";
+
+        let headScript = document.querySelector('script');
+        headScript.parentNode.insertBefore(link, headScript);
+    });
+};
+
+fetchStyle(settings.get("theme"));

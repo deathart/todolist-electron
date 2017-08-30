@@ -6,7 +6,6 @@ body {
 .container-fluid {
     position: static !important;
     #config {
-        background-color: #312450;
         padding: 2%;
         color: #FFFFFF;
         border-right: 1px solid #FFFFFF;
@@ -24,7 +23,6 @@ body {
         }
     }
     #content {
-        background-color: #5e42a6;
         padding: 1%;
         color: #FFFFFF;
         h5 {
@@ -94,14 +92,9 @@ body {
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #312450;
     color: #FFFFFF;
     cursor: pointer;
     padding: 10px;
     border-radius: 10px;
     color: #FFFFFF;
-}
-
-#BtnHome:hover {
-    background-color: #1B1037;
 }
