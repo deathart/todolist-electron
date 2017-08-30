@@ -1,114 +1,149 @@
 html,
-body {
+body
+{
     height: 100%;
 }
 
-.container-fluid {
+.container-fluid
+{
     position: static !important;
 }
 
-#config {
-    background-color: #312450;
+#config
+{
     padding: 2%;
-    color: #FFFFFF;
-    border-right: 1px solid #FFFFFF;
+
+    color: #fff;
+    border-right: 1px solid #fff; 
+    background-color: #312450;
 }
 
-#config>p {
+#config > p
+{
     text-align: center;
 }
 
-#config>p>.edit-project {
-    padding-left: 5px;
-    color: #FFA500;
+#config > p > .edit-project
+{
     font-size: 14px;
-    cursor: pointer;
+
+    padding-left: 5px;
+
+    cursor: pointer; 
+
+    color: #ffa500;
 }
 
-#config>h4 {
+#config > h4
+{
     text-align: center;
 }
 
-#content {
-    background-color: #5e42a6;
+#content
+{
     padding: 1%;
-    color: #FFFFFF;
+
+    color: #fff; 
+    background-color: #5e42a6;
 }
 
-#content>h5 {
+#content > h5
+{
     padding-bottom: 1%;
 }
 
-.table-light {
-    color: #000000;
+.table-light
+{
+    color: #000;
 }
 
-.add_taskopenmodal {
+.add_taskopenmodal
+{
     cursor: pointer;
 }
 
-#BtnHome {
-    display: block;
+#BtnHome
+{
     position: fixed;
-    bottom: 20px;
-    right: 30px;
     z-index: 99;
+    right: 30px;
+    bottom: 20px;
+
+    display: block;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    color: #fff;
+    color: #fff; 
     border: none;
+    border-radius: 10px;
     outline: none;
     background-color: #312450;
-    color: #FFFFFF;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 10px;
-    color: #FFFFFF;
 }
 
-#BtnHome:hover {
-    background-color: #1B1037;
+#BtnHome:hover
+{
+    background-color: #1b1037;
 }
 
-.list_task>tr:hover {
+.list_task > tr:hover
+{
     cursor: pointer;
 }
 
-.btn {
+.btn
+{
     cursor: pointer;
 }
 
-.hiddenRow {
+.hiddenRow
+{
     padding: 0 !important;
 }
 
-.info_task_col {
+.info_task_col
+{
+    padding: 5px; 
+
+    color: #000;
     background-color: #fdfdfe;
-    color: #000000;
-    padding: 5px;
 }
 
-.table-task {
+.table-task
+{
     border-collapse: collapse;
+
     background-color: #fdfdfe;
 }
 
-.edit-task {
-    color: #FFA500;
+.edit-task
+{
+    color: #ffa500;
 }
 
-.delete-task {
+.delete-task
+{
     margin-left: 5px;
-    color: #FF0000;
+
+    color: #f00;
 }
 
-.close-task {
+.close-task
+{
     margin-left: 5px;
+
     color: #008000;
 }
 
-.table-success {
-    color: #000000;
+.table-success
+{
+    color: #000;
 }
 
-.table-success>th,
-.table-success>td:nth-child(-n+3) {
+.table-success > th,
+.table-success > td:nth-child(-n+3)
+{
     text-decoration: line-through;
 }
