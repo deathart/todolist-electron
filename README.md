@@ -33,7 +33,7 @@ For tests we use jshint
 
 # Todo
 - [ ] Online todolist
-- [ ] Multiple theme
+- [x] Multiple theme
 - [ ] Crypt projects & tasks
 - [ ] Linux & Mac version
 - [ ] Angular version
