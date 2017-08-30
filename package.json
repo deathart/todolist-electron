@@ -88,7 +88,7 @@
     },
     "devDependencies": {
         "electron": "^1.7.6",
-        "electron-builder": "^19.26.2",
+        "electron-builder": "^19.27.0",
         "jshint": "^2.9.5",
         "jshint-stylish": "^2.2.1",
         "jshint-stylish-summary": "^0.1.2"
