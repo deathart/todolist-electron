@@ -19,6 +19,8 @@
     "content_myproject_list_date_create": "Create ",
     "settings_dev": "Develop mode",
     "content_myproject_list_date_last_update": "Last update ",
-    "settings_theme_choice": "Theme",
-    "settings_theme_purple": "Purple"
+    "settings_theme": "Theme",
+    "settings_theme_choice": "Choice",
+    "settings_theme_purple": "Purple",
+    "settings_theme_blue": "Blue"
 }
