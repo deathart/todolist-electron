@@ -13,22 +13,19 @@ body {
     text-align: right;
     height: 100%;
     padding: 0 10% 0 20%;
-}
-
-#home_menu>ul {
-    width: 100%;
-}
-
-#home_menu>ul>li {
-    cursor: pointer;
-    padding: 5px;
-    color: #808080;
-}
-
-#home_menu>ul>li.active {
-    border-bottom: 1px solid #FFFFFF;
-    font-weight: bold;
-    color: #FFFFFF;
+    ul {
+        width: 100%;
+        li {
+            cursor: pointer;
+            padding: 5px;
+            color: #808080;
+            &.active {
+                border-bottom: 1px solid #FFFFFF;
+                font-weight: bold;
+                color: #FFFFFF;
+            }
+        }
+    }
 }
 
 #home_content {
@@ -36,27 +33,23 @@ body {
     color: #FFFFFF;
     height: 100%;
     padding: 0 2% 0 2%;
-}
-
-#home_content>.block_welcome {}
-
-#home_content>.block_myproject {
-    display: none;
-}
-
-#home_content>.block_myproject>ul>li {
-    color: #000000;
-    cursor: pointer;
-}
-
-.delete-project {
-    color: #FF0000;
-}
-
-#home_content>.block_newproject {
-    display: none;
-}
-
-#home_content>.block_settings {
-    display: none;
+    .block_welcome {}
+    .block_myproject {
+        display: none;
+        ul {
+            li {
+                color: #000000;
+                cursor: pointer;
+                .delete-project {
+                    color: #FF0000;
+                }
+            }
+        }
+    }
+    .block_newproject {
+        display: none;
+    }
+    .block_settings {
+        display: none;
+    }
 }

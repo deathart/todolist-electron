@@ -19,13 +19,11 @@ body
     color: #fff;
     background: #312450;
 }
-
-#home_menu > ul
+#home_menu ul
 {
     width: 100%;
 }
-
-#home_menu > ul > li
+#home_menu ul li
 {
     padding: 5px;
 
@@ -33,8 +31,7 @@ body
 
     color: #808080;
 }
-
-#home_menu > ul > li.active
+#home_menu ul li.active
 {
     font-weight: bold;
 
@@ -50,30 +47,25 @@ body
     color: #fff;
     background-color: #5e42a6;
 }
-
-#home_content > .block_myproject
+#home_content .block_myproject
 {
     display: none;
 }
-
-#home_content > .block_myproject > ul > li
+#home_content .block_myproject ul li
 {
     cursor: pointer; 
 
     color: #000;
 }
-
-.delete-project
+#home_content .block_myproject ul li .delete-project
 {
     color: #f00;
 }
-
-#home_content > .block_newproject
+#home_content .block_newproject
 {
     display: none;
 }
-
-#home_content > .block_settings
+#home_content .block_settings
 {
     display: none;
 }

@@ -5,46 +5,85 @@ body {
 
 .container-fluid {
     position: static !important;
-}
-
-#config {
-    background-color: #312450;
-    padding: 2%;
-    color: #FFFFFF;
-    border-right: 1px solid #FFFFFF;
-}
-
-#config>p {
-    text-align: center;
-}
-
-#config>p>.edit-project {
-    padding-left: 5px;
-    color: #FFA500;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-#config>h4 {
-    text-align: center;
-}
-
-#content {
-    background-color: #5e42a6;
-    padding: 1%;
-    color: #FFFFFF;
-}
-
-#content>h5 {
-    padding-bottom: 1%;
-}
-
-.table-light {
-    color: #000000;
-}
-
-.add_taskopenmodal {
-    cursor: pointer;
+    #config {
+        background-color: #312450;
+        padding: 2%;
+        color: #FFFFFF;
+        border-right: 1px solid #FFFFFF;
+        p {
+            text-align: center;
+            .edit-project {
+                padding-left: 5px;
+                color: #FFA500;
+                font-size: 14px;
+                cursor: pointer;
+            }
+        }
+        h4 {
+            text-align: center;
+        }
+    }
+    #content {
+        background-color: #5e42a6;
+        padding: 1%;
+        color: #FFFFFF;
+        h5 {
+            padding-bottom: 1%;
+        }
+    }
+    .table-light {
+        color: #000000;
+    }
+    .add_taskopenmodal {
+        cursor: pointer;
+    }
+    .list_task>tr:hover {
+        cursor: pointer;
+    }
+    .btn {
+        cursor: pointer;
+    }
+    .hiddenRow {
+        padding: 0 !important;
+    }
+    .info_task_col {
+        background-color: #fdfdfe;
+        color: #000000;
+        padding: 5px;
+    }
+    .table-task {
+        border-collapse: collapse;
+        background-color: #fdfdfe;
+        .list_task {
+            tr {
+                .edit-task {
+                    color: #FFA500;
+                }
+                .delete-task {
+                    margin-left: 5px;
+                    color: #FF0000;
+                }
+                .close-task {
+                    margin-left: 5px;
+                    color: #008000;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+                &.table-success {
+                    color: #000000;
+                    th {
+                        text-decoration: line-through;
+                    }
+                    td {
+                        &:nth-child(-n+3) {
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 #BtnHome {
@@ -65,50 +104,4 @@ body {
 
 #BtnHome:hover {
     background-color: #1B1037;
-}
-
-.list_task>tr:hover {
-    cursor: pointer;
-}
-
-.btn {
-    cursor: pointer;
-}
-
-.hiddenRow {
-    padding: 0 !important;
-}
-
-.info_task_col {
-    background-color: #fdfdfe;
-    color: #000000;
-    padding: 5px;
-}
-
-.table-task {
-    border-collapse: collapse;
-    background-color: #fdfdfe;
-}
-
-.edit-task {
-    color: #FFA500;
-}
-
-.delete-task {
-    margin-left: 5px;
-    color: #FF0000;
-}
-
-.close-task {
-    margin-left: 5px;
-    color: #008000;
-}
-
-.table-success {
-    color: #000000;
-}
-
-.table-success>th,
-.table-success>td:nth-child(-n+3) {
-    text-decoration: line-through;
 }

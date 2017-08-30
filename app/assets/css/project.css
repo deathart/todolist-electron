@@ -8,8 +8,7 @@ body
 {
     position: static !important;
 }
-
-#config
+.container-fluid #config
 {
     padding: 2%;
 
@@ -17,13 +16,11 @@ body
     border-right: 1px solid #fff; 
     background-color: #312450;
 }
-
-#config > p
+.container-fluid #config p
 {
     text-align: center;
 }
-
-#config > p > .edit-project
+.container-fluid #config p .edit-project
 {
     font-size: 14px;
 
@@ -33,33 +30,85 @@ body
 
     color: #ffa500;
 }
-
-#config > h4
+.container-fluid #config h4
 {
     text-align: center;
 }
-
-#content
+.container-fluid #content
 {
     padding: 1%;
 
     color: #fff; 
     background-color: #5e42a6;
 }
-
-#content > h5
+.container-fluid #content h5
 {
     padding-bottom: 1%;
 }
-
-.table-light
+.container-fluid .table-light
 {
     color: #000;
 }
-
-.add_taskopenmodal
+.container-fluid .add_taskopenmodal
 {
     cursor: pointer;
+}
+.container-fluid .list_task > tr:hover
+{
+    cursor: pointer;
+}
+.container-fluid .btn
+{
+    cursor: pointer;
+}
+.container-fluid .hiddenRow
+{
+    padding: 0 !important;
+}
+.container-fluid .info_task_col
+{
+    padding: 5px; 
+
+    color: #000;
+    background-color: #fdfdfe;
+}
+.container-fluid .table-task
+{
+    border-collapse: collapse;
+
+    background-color: #fdfdfe;
+}
+.container-fluid .table-task .list_task tr .edit-task
+{
+    color: #ffa500;
+}
+.container-fluid .table-task .list_task tr .delete-task
+{
+    margin-left: 5px;
+
+    color: #f00;
+}
+.container-fluid .table-task .list_task tr .close-task
+{
+    margin-left: 5px;
+
+    color: #008000;
+}
+.container-fluid .table-task .list_task tr:hover
+{
+    cursor: pointer;
+}
+.container-fluid .table-task .list_task tr.table-success
+{
+    color: #000;
+}
+.container-fluid .table-task .list_task tr.table-success th
+{
+    text-decoration: line-through;
+}
+.container-fluid .table-task .list_task tr.table-success td:nth-child(-n+3)
+{
+    text-decoration: line-through;
 }
 
 #BtnHome
@@ -86,64 +135,4 @@ body
 #BtnHome:hover
 {
     background-color: #1b1037;
-}
-
-.list_task > tr:hover
-{
-    cursor: pointer;
-}
-
-.btn
-{
-    cursor: pointer;
-}
-
-.hiddenRow
-{
-    padding: 0 !important;
-}
-
-.info_task_col
-{
-    padding: 5px; 
-
-    color: #000;
-    background-color: #fdfdfe;
-}
-
-.table-task
-{
-    border-collapse: collapse;
-
-    background-color: #fdfdfe;
-}
-
-.edit-task
-{
-    color: #ffa500;
-}
-
-.delete-task
-{
-    margin-left: 5px;
-
-    color: #f00;
-}
-
-.close-task
-{
-    margin-left: 5px;
-
-    color: #008000;
-}
-
-.table-success
-{
-    color: #000;
-}
-
-.table-success > th,
-.table-success > td:nth-child(-n+3)
-{
-    text-decoration: line-through;
 }
