@@ -41,6 +41,7 @@ For tests we use jshint
 - [ ] Private Projects (Password Protection)
 - [ ] More information for update
 - [ ] Add new language
-- [ ] Import project (File & Url & Ftp)
+- [ ] Import & export project (File & Url & Ftp)
+- [ ] Category
 - [x] i18n
 - [x] Automatique update
