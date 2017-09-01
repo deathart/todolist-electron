@@ -83,12 +83,12 @@
         "handlebars": "^4.0.10",
         "i18n": "^0.8.3",
         "jquery": "^3.2.1",
-        "lowdb": "^0.17.2",
+        "lowdb": "^1.0.0",
         "moment": "^2.18.1"
     },
     "devDependencies": {
-        "electron": "^1.7.6",
-        "electron-builder": "^19.27.0",
+        "electron": "^1.8.0",
+        "electron-builder": "^19.27.3",
         "gulp": "^3.9.1",
         "gulp-autoprefixer": "^4.0.0",
         "gulp-csscomb": "^3.0.8",
