@@ -13,14 +13,18 @@
     "form_add_project_desc": "Description",
     "form_add_project_submit": "Ajouter",
     "settings_lang": "Language",
-    "settings_lang_choice": "choisissez",
+    "settings_lang_choice": "Choisissez",
     "settings_lang_fr": "Français",
     "settings_lang_en": "Anglais",
     "content_myproject_list_date_create": "Créer le ",
     "settings_dev": "Mode dévellopement",
     "content_myproject_list_date_last_update": "Dernière mise à jours ",
     "settings_theme": "Thème",
-    "settings_theme_choice": "choisissez",
+    "settings_theme_choice": "Choisissez",
     "settings_theme_purple": "Violet",
-    "settings_theme_blue": "Bleu"
+    "settings_theme_blue": "Bleu",
+    "settings_crypt": "Crypté les données",
+    "settings_crypt_choice": "Choisissez",
+    "settings_crypt_yes": "Yes",
+    "settings_crypt_no": "No"
 }

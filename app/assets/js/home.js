@@ -109,10 +109,6 @@ $("#inlineFormCustomSelectPref").change(function() {
 
 });
 
-if (settings.get('dev') == true) {
-    $("#InputDevMode").prop('checked', true);
-}
-
 $("#SettingsTheme").change(function() {
 
     settings.set('theme', $(this).val());
@@ -121,6 +117,17 @@ $("#SettingsTheme").change(function() {
 
 });
 
+$("#SettingsCrypt").change(function() {
+
+    settings.set('Crypt', $(this).val());
+
+    location.reload();
+
+});
+
+if (settings.get('dev') == true) {
+    $("#InputDevMode").prop('checked', true);
+}
 
 $("#InputDevMode").change(function() {
     if ($(this).is(":checked")) {
