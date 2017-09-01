@@ -41,7 +41,7 @@ app.on('ready', function() {
     }
 
     if (!settings.has('crypt')) {
-        settings.set('crypt', "yes");
+        settings.set('crypt', true);
     }
 
     i18n.configure({

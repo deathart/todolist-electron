@@ -119,7 +119,15 @@ $("#SettingsTheme").change(function() {
 
 $("#SettingsCrypt").change(function() {
 
-    settings.set('Crypt', $(this).val());
+    let resu = $(this).val();
+    if (parseInt(resu)) {
+        if (resu == 1) {
+            settings.set('crypt', true);
+        } else if (resu == 2) {
+            settings.set('crypt', false);
+        }
+        location.reload();
+    }
 
     location.reload();
 
