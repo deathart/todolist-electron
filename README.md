@@ -34,7 +34,7 @@ For tests we use jshint
 # Todo
 - [ ] Online todolist
 - [x] Multiple theme
-- [ ] Crypt projects & tasks
+- [x] Crypt projects & tasks
 - [ ] Linux & Mac version
 - [ ] Angular version
 - [ ] Keyboard shortcode
