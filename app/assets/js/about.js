@@ -6,12 +6,12 @@ const i18n = require("i18n");
 const package = require(__dirname + '/../../package.json');
 
 i18n.configure({
-    locale: "home",
+    locale: "about",
     directory: __dirname + '/../locales/' + settings.get('lang') + "/"
 });
 
 handlebars.registerHelper('i18n', function(str) {
-    return i18n.__({ phrase: str, locale: "home" });
+    return i18n.__({ phrase: str, locale: "about" });
 });
 
 let template = handlebars.compile(document.documentElement.innerHTML);
