@@ -1,6 +1,6 @@
 {
     "name": "todolist-electron",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "productName": "Todolist Electron",
     "description": "Todo list developed in javascript with Node JS & Electron",
     "main": "app/main.js",
