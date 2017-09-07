@@ -8,28 +8,18 @@ const i18n = require("i18n");
 const moment = require('moment');
 const package = require(__dirname + '/../../package.json');
 
-let adapter;
+let db;
 
 if (settings.get('crypt')) {
-    adapter = new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json", {
-        format: {
-            deserialize: function(str) {
-                var decrypted = cryptr.decrypt(str);
-                var obj = JSON.parse(decrypted);
-                return obj;
-            },
-            serialize: function(obj) {
-                var str = JSON.stringify(obj);
-                var encrypted = cryptr.encrypt(str);
-                return encrypted;
-            }
-        }
+    db = low(new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json"), {
+        encrypt: true
     });
 } else {
     adapter = new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json");
+    db = low(new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json"), {
+        encrypt: false
+    });
 }
-
-const db = low(adapter);
 
 db.defaults({ projects: [], projects_info: [] }).write();
 
