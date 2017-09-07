@@ -39,7 +39,7 @@ For tests we use jshint
 - [ ] Angular version
 - [ ] Keyboard shortcode
 - [ ] Private Projects (Password Protection)
-- [ ] More information for update
+- [x] More information for update
 - [ ] Add new language
 - [ ] Import & export project (File & Url & Ftp)
 - [ ] Category

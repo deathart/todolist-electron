@@ -90,7 +90,7 @@ function OpenAboutWindow(win) {
     let aboutwin = new BrowserWindow({
         width: 350,
         height: 400,
-        parent: mainWindow,
+        parent: win,
         modal: true,
         show: false,
         resizable: false,
@@ -100,7 +100,7 @@ function OpenAboutWindow(win) {
 
     aboutwin.loadURL(`file://${__dirname}/html/about.html`);
     aboutwin.setMenu(null);
-    aboutwin.webContents.closeDevTools();
+
     aboutwin.once('ready-to-show', () => {
         aboutwin.show();
     });
@@ -180,7 +180,6 @@ function createWindow() {
 }
 
 autoUpdater.on('update-available', (ev, info) => {
-    let release_note = ev.releaseNotes;
     dialog.showMessageBox({
         type: "info",
         title: i18n.__({ phrase: "update_available_title", locale: "general" }),
@@ -188,17 +187,63 @@ autoUpdater.on('update-available', (ev, info) => {
         buttons: [i18n.__({ phrase: "update_available_btn_yes", locale: "general" }), i18n.__({ phrase: "update_available_btn_no", locale: "general" })]
     }, function(response) {
         if (response == 0) {
-
-            autoUpdater.downloadUpdate();
-
-            autoUpdater.on('download-progress', (info) => {
-                let update_progress = info.percent;
-            });
-
-            autoUpdater.on('update-downloaded', (ev, info) => {
-                autoUpdater.quitAndInstall();
-            });
+            OpenUpdateWindow(mainWindow, ev.version, ev.releaseNotes);
         }
     });
 
+});
+
+function OpenUpdateWindow(win, version, releasenote) {
+
+    let updatewin = new BrowserWindow({
+        width: 350,
+        height: 450,
+        parent: win,
+        modal: true,
+        show: false,
+        resizable: false,
+        minimizable: false,
+        maximizable: false
+    });
+
+    updatewin.loadURL(`file://${__dirname}/html/update.html`);
+    updatewin.setMenu(null);
+
+    updatewin.once('ready-to-show', () => {
+        updatewin.show();
+
+        autoUpdater.downloadUpdate();
+    });
+
+    if (settings.get('dev')) {
+        updatewin.webContents.openDevTools();
+    }
+
+    updatewin.webContents.on('did-finish-load', () => {
+
+        updatewin.webContents.send('updateInfo', { "version": app.getVersion(), "new": version, "note": releasenote });
+
+        updatewin.webContents.send('updateProgress', {});
+        updatewin.webContents.send('updateProgressFinish', false);
+
+    });
+
+    autoUpdater.on('download-progress', (progressObj) => {
+        updatewin.webContents.send('updateProgress', { "percent": progressObj.percent, "transferred": progressObj.transferred, "total": progressObj.total });
+    });
+
+    autoUpdater.on('update-downloaded', (ev, info) => {
+        updatewin.webContents.send('updateProgressFinish', true);
+    });
+
+    autoUpdater.on('update-downloaded', function(info) {
+        setTimeout(function() {
+            autoUpdater.quitAndInstall();
+        }, 1000);
+    });
+
+}
+
+autoUpdater.on('error', (err) => {
+    console.log(err);
 });

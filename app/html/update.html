@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TodoList Electron - {{ i18n "title" }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="../assets/css/update.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div id="update" class="h-100">
+        <div class="container-fluid p-0 h-100">
+            <div class="row no-gutters justify-content-center h-100">
+                <div class="col">
+                    <h5>{{ i18n "release_note_title" }}</h5>
+                    <div class="changelog">
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">25%</div>
+                    </div>
+                    <div class="message">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
+    <script type="text/javascript" src="../assets/js/update.js"></script>
+</body>
+
+</html>

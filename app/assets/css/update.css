@@ -1,0 +1,28 @@
+html,
+body
+{
+    height: 100%;
+}
+
+#update
+{
+    color: #fff; 
+    background-color: #5e42a6;
+}
+
+h5
+{
+    text-align: center;
+}
+
+.progress
+{
+    margin: 5px;
+}
+
+.message
+{
+    margin: 5px; 
+
+    text-align: center;
+}
