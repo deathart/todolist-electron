@@ -7,10 +7,10 @@ const i18n = require("i18n");
 const moment = require('moment');
 const package = require(__dirname + '/../../package.json');
 
-let db;
+let adapter;
 
 if (settings.get('crypt')) {
-    db = low(new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json", {
+    adapter = new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json", {
         format: {
             deserialize: function(str) {
                 var decrypted = cryptr.decrypt(str);
@@ -23,10 +23,12 @@ if (settings.get('crypt')) {
                 return encrypted;
             }
         }
-    }));
+    });
 } else {
-    db = low(new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json"));
+    adapter = new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json");
 }
+
+const db = low(adapter);
 
 let project_id = ipcRenderer.sendSync('getproject');
 let project_info = db.get('projects').filter({ id: project_id }).value()[0];
