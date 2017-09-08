@@ -15,7 +15,6 @@ if (settings.get('crypt')) {
         encrypt: true
     });
 } else {
-    adapter = new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json");
     db = low(new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json"), {
         encrypt: false
     });
