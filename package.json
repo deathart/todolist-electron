@@ -76,9 +76,10 @@
         }
     },
     "dependencies": {
+        "electron-builder": "^19.30.2",
         "electron-debug": "^1.4.0",
         "electron-settings": "^3.1.1",
-        "electron-updater": "^2.9.0",
+        "electron-updater": "^2.10.0",
         "electron-window-state": "^4.1.1",
         "handlebars": "^4.0.10",
         "i18n": "^0.8.3",
@@ -88,7 +89,6 @@
     },
     "devDependencies": {
         "electron": "^1.8.0",
-        "electron-builder": "^19.28.1",
         "gulp": "^3.9.1",
         "gulp-autoprefixer": "^4.0.0",
         "gulp-csscomb": "^3.0.8",
