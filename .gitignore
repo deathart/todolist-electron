@@ -58,8 +58,5 @@ yarn.lock
 # dotenv environment variables file
 .env
 
-# package-lock.json
-package-lock.json
-
 # release folder
 releases/
