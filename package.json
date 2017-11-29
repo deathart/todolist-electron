@@ -1,101 +1,101 @@
 {
-    "name": "todolist-electron",
-    "version": "1.0.4",
+  "name": "todolist-electron",
+  "version": "1.0.4",
+  "productName": "Todolist Electron",
+  "description": "Todo list developed in javascript with Node JS & Electron",
+  "main": "app/main.js",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "test": "jshint --reporter=reporter.js --exclude=app/assets/js/vendor/ app",
+    "start": "electron .",
+    "build-win": "electron-builder --win --ia32 --x64"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deathart/todolist-electron.git"
+  },
+  "keywords": [
+    "todo",
+    "todolist",
+    "electron",
+    "node",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "deathart",
+  "copyright": "©deathart",
+  "license": {
+    "type": "GPL-3.0",
+    "url": "https://github.com/deathart/todolist-electron/blob/master/LICENSE"
+  },
+  "bugs": {
+    "url": "https://github.com/deathart/todolist-electron/issues"
+  },
+  "homepage": "https://github.com/deathart/todolist-electron#readme",
+  "build": {
+    "appId": "todolist.electron",
+    "copyright": "© deathart",
+    "asar": false,
     "productName": "Todolist Electron",
-    "description": "Todo list developed in javascript with Node JS & Electron",
-    "main": "app/main.js",
-    "scripts": {
-        "postinstall": "electron-builder install-app-deps",
-        "test": "jshint --reporter=reporter.js --exclude=app/assets/js/vendor/ app",
-        "start": "electron .",
-        "build-win": "electron-builder --win --ia32 --x64"
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg",
+        "zip"
+      ]
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/deathart/todolist-electron.git"
+    "dmg": {
+      "backgroundColor": "#cdcdcd"
     },
-    "keywords": [
-        "todo",
-        "todolist",
-        "electron",
-        "node",
-        "nodejs",
-        "javascript"
+    "linux": {
+      "maintainer": "deathart",
+      "category": "Utility",
+      "description": "Todo list developed in javascript with Node JS & Electron",
+      "packageCategory": "Utility",
+      "target": [
+        "deb",
+        "rpm",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ]
+    },
+    "files": [
+      "node_modules",
+      "app",
+      "reporter.js",
+      "package.json",
+      "LICENSE"
     ],
-    "author": "deathart",
-    "copyright": "©deathart",
-    "license": {
-        "type": "GPL-3.0",
-        "url": "https://github.com/deathart/todolist-electron/blob/master/LICENSE"
-    },
-    "bugs": {
-        "url": "https://github.com/deathart/todolist-electron/issues"
-    },
-    "homepage": "https://github.com/deathart/todolist-electron#readme",
-    "build": {
-        "appId": "todolist.electron",
-        "copyright": "© deathart",
-        "asar": false,
-        "productName": "Todolist Electron",
-        "mac": {
-            "category": "public.app-category.productivity",
-            "target": [
-                "dmg",
-                "zip"
-            ]
-        },
-        "dmg": {
-            "backgroundColor": "#cdcdcd"
-        },
-        "linux": {
-            "maintainer": "deathart",
-            "category": "Utility",
-            "description": "Todo list developed in javascript with Node JS & Electron",
-            "packageCategory": "Utility",
-            "target": [
-                "deb",
-                "rpm",
-                "zip"
-            ]
-        },
-        "win": {
-            "target": [
-                "zip",
-                "nsis"
-            ]
-        },
-        "files": [
-            "node_modules",
-            "app",
-            "reporter.js",
-            "package.json",
-            "LICENSE"
-        ],
-        "directories": {
-            "output": "./releases"
-        }
-    },
-    "dependencies": {
-        "electron-builder": "^19.37.2",
-        "electron-debug": "^1.4.0",
-        "electron-settings": "^3.1.3",
-        "electron-updater": "^2.13.0",
-        "electron-window-state": "^4.1.1",
-        "handlebars": "^4.0.11",
-        "i18n": "^0.8.3",
-        "jquery": "^3.2.1",
-        "lowdb": "^1.0.0",
-        "moment": "^2.19.1"
-    },
-    "devDependencies": {
-        "electron": "^1.8.0",
-        "gulp": "^3.9.1",
-        "gulp-autoprefixer": "^4.0.0",
-        "gulp-csscomb": "^3.0.8",
-        "gulp-load-plugins": "^1.5.0",
-        "gulp-sass": "^3.1.0",
-        "jshint": "^2.9.5",
-        "jshint-stylish": "^2.2.1",
-        "jshint-stylish-summary": "^0.1.2"
+    "directories": {
+      "output": "./releases"
     }
+  },
+  "dependencies": {
+    "electron-builder": "^19.37.2",
+    "electron-debug": "^1.4.0",
+    "electron-settings": "^3.1.3",
+    "electron-updater": "^2.13.0",
+    "electron-window-state": "^4.1.1",
+    "handlebars": "^4.0.11",
+    "i18n": "^0.8.3",
+    "jquery": "^3.2.1",
+    "lowdb": "^1.0.0",
+    "moment": "^2.19.3"
+  },
+  "devDependencies": {
+    "electron": "^1.8.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-sass": "^3.1.0",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.1",
+    "jshint-stylish-summary": "^0.1.2"
+  }
 }
