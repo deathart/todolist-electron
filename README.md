@@ -2,6 +2,8 @@
 [![licence](https://img.shields.io/badge/licence-GPL--3.0-blue.svg)]()
 
 # Todolist Electron
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/deathart/todolist-electron.svg)](https://greenkeeper.io/)
 Todo list developed in javascript with Node JS & Electron.
 
 # Help
