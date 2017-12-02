@@ -60,3 +60,5 @@ yarn.lock
 
 # release folder
 releases/
+todolist-electron.iml
+.idea/
