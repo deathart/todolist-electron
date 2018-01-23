@@ -88,7 +88,7 @@
     "moment": "^2.20.1"
   },
   "devDependencies": {
-    "electron": "^1.8.1",
+    "electron": "^1.8.2-beta.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-csscomb": "^3.0.8",
