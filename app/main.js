@@ -4,22 +4,23 @@ const fs = require('fs');
 const settings = require('electron-settings');
 const i18n = require("i18n");
 const { autoUpdater } = require("electron-updater");
+const os = require('os');
 
 let mainWindow;
 let mainWindowState;
 
 autoUpdater.autoDownload = false;
 
-if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron")) {
-    fs.mkdirSync(process.env.USERPROFILE + "/Documents/todolist-electron");
-    fs.writeFile(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json", "", (err) => {
+if (!fs.existsSync(os.homedir() + "/Documents/todolist-electron")) {
+    fs.mkdirSync(os.homedir() + "/Documents/todolist-electron");
+    fs.writeFile(os.homedir() + "/Documents/todolist-electron/project_list.json", "", (err) => {
         if (err) {
             throw err;
         }
     });
 } else {
-    if (!fs.existsSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json")) {
-        fs.writeFile(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json", "", (err) => {
+    if (!fs.existsSync(os.homedir() + "/Documents/todolist-electron/project_list.json")) {
+        fs.writeFile(os.homedir() + "/Documents/todolist-electron/project_list.json", "", (err) => {
             if (err) {
                 throw err;
             }

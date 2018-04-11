@@ -7,15 +7,16 @@ const handlebars = require("handlebars");
 const i18n = require("i18n");
 const moment = require('moment');
 const package = require(__dirname + '/../../package.json');
+const os = require('os');
 
 let db;
 
 if (settings.get('crypt')) {
-    db = low(new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json"), {
+    db = low(new FileSync(os.homedir() + "/Documents/todolist-electron/project_list.json"), {
         encrypt: true
     });
 } else {
-    db = low(new FileSync(process.env.USERPROFILE + "/Documents/todolist-electron/project_list.json"), {
+    db = low(new FileSync(os.homedir() + "/Documents/todolist-electron/project_list.json"), {
         encrypt: false
     });
 }
