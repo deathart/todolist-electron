@@ -27,20 +27,20 @@
                 </div>
                 <div class="col-9">
                     <div id="home_content" class="d-flex align-items-center">
-                        <div id="block_select" class="block_welcome">
+                        <div class="block_select" id="block_welcome">
                             <h1 class="display-3">{{ i18n "content_title_welcome" }}</h1>
                             <p class="lead">
                                 {{ i18n "content_desc_welcome" }}
                             </p>
                         </div>
-                        <div id="block_select" class="block_myproject">
+                        <div class="block_select" id="block_myproject">
                             <h1 class="display-3">{{ i18n "content_title_myproject" }}</h1>
                             <p class="lead">
                                 <ul class="list-group list_myprojects">
                                 </ul>
                             </p>
                         </div>
-                        <div id="block_select" class="block_newproject">
+                        <div class="block_select" id="block_newproject">
                             <h1 class="display-3">{{ i18n "content_title_addproject" }}</h1>
                             <p class="lead">
                                 <form class="add_project">
@@ -58,13 +58,13 @@
                                 </form>
                             </p>
                         </div>
-                        <div id="block_select" class="block_settings">
+                        <div class="block_select" id="block_settings">
                             <h1 class="display-3">{{ i18n "content_title_settings" }}</h1>
                             <p class="lead">
                                 <form>
                                     <div class="form-group">
                                         <label for="inlineFormCustomSelectPref">{{ i18n "settings_lang" }}</label>
-                                        <select class="custom-select" id="inlineFormCustomSelectPref">
+                                        <select class="form-control" id="inlineFormCustomSelectPref">
                                             <option selected>{{ i18n "settings_lang_choice" }}</option>
                                             <option value="1">{{ i18n "settings_lang_fr" }}</option>
                                             <option value="2">{{ i18n "settings_lang_en" }}</option>
@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="SettingsTheme">{{ i18n "settings_theme" }}</label>
-                                        <select class="custom-select" id="SettingsTheme">
+                                        <select class="form-control" id="SettingsTheme">
                                             <option selected>{{ i18n "settings_theme_choice" }}</option>
                                             <option value="purple">{{ i18n "settings_theme_purple" }}</option>
                                             <option value="blue">{{ i18n "settings_theme_blue" }}</option>
@@ -80,18 +80,17 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="SettingsCrypt">{{ i18n "settings_crypt" }}</label>
-                                        <select class="custom-select" id="SettingsCrypt">
+                                        <select class="form-control" id="SettingsCrypt">
                                             <option selected>{{ i18n "settings_crypt_choice" }}</option>
                                             <option value="1">{{ i18n "settings_crypt_yes" }}</option>
                                             <option value="2">{{ i18n "settings_crypt_no" }}</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label class="custom-control custom-checkbox">
+                                        <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="InputDevMode">
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description">{{ i18n "settings_dev" }}</span>
-                                        </label>
+                                            <label class="custom-control-label" for="InputDevMode">{{ i18n "settings_dev" }}</label>
+                                        </div>
                                     </div>
                                 </form>
                             </p>

@@ -31,8 +31,7 @@ body {
     color: #FFFFFF;
     height: 100%;
     padding: 0 2% 0 2%;
-    .block_welcome {}
-    .block_myproject {
+    #block_myproject {
         display: none;
         ul {
             li {
@@ -44,10 +43,10 @@ body {
             }
         }
     }
-    .block_newproject {
+    #block_newproject {
         display: none;
     }
-    .block_settings {
+    #block_settings {
         display: none;
     }
 }

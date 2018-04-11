@@ -74,6 +74,7 @@ body
 {
     border-collapse: collapse;
 
+    color: #171a1d; 
     background-color: #fdfdfe;
 }
 .container-fluid .table-task .list_task tr .edit-task

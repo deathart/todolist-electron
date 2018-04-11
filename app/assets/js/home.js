@@ -41,13 +41,13 @@ $("#home_menu > ul > li").click(function(e) {
     e.preventDefault();
 
     let page_name = $(this).data("page");
-    let block = ".block_" + page_name;
+    let block = "#block_" + page_name;
 
     $(this).addClass("active");
 
     $("#home_menu > ul > li").not($(this)).removeClass("active");
 
-    $("div #block_select").not($(block)).hide();
+    $("div .block_select").not($(block)).hide();
     $(block).show();
 
     return false;

@@ -45,25 +45,25 @@ body
 
     color: #fff;
 }
-#home_content .block_myproject
+#home_content #block_myproject
 {
     display: none;
 }
-#home_content .block_myproject ul li
+#home_content #block_myproject ul li
 {
     cursor: pointer; 
 
     color: #000;
 }
-#home_content .block_myproject ul li .delete-project
+#home_content #block_myproject ul li .delete-project
 {
     color: #f00;
 }
-#home_content .block_newproject
+#home_content #block_newproject
 {
     display: none;
 }
-#home_content .block_settings
+#home_content #block_settings
 {
     display: none;
 }
