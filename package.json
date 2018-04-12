@@ -8,9 +8,9 @@
     "postinstall": "electron-builder install-app-deps",
     "test": "jshint --reporter=reporter.js --exclude=app/assets/js/vendor/ app",
     "start": "electron . --enable-logging",
-    "build-win": "electron-builder --win --ia32 --x64",
-    "build-mac": "electron-builder --mac",
-    "build-assets": "gulp css"
+    "build": "npm run build-assets && npm run build-app",
+    "build-app": "electron-builder --mac --win --ia32 --x64",
+    "build-assets": "gulp scss"
   },
   "repository": {
     "type": "git",
@@ -88,7 +88,7 @@
   "devDependencies": {
     "electron": "^1.8.4",
     "electron-builder": "^20.8.2",
-    "gulp": "^4.0.0",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-csscomb": "^3.0.8",
     "gulp-load-plugins": "^1.5.0",
