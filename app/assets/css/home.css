@@ -1,69 +1,58 @@
 html,
-body
-{
-    height: 100%;
+body {
+  height: 100%;
 }
 
-.container-fluid
-{
-    position: static !important;
+.container-fluid {
+  position: static !important;
 }
 
-#home_menu
-{
-    height: 100%;
-    padding: 0 10% 0 20%; 
-
-    text-align: right;
-
-    color: #fff;
-}
-#home_menu ul
-{
-    width: 100%;
-}
-#home_menu ul li
-{
-    padding: 5px;
-
-    cursor: pointer;
-
-    color: #808080;
-}
-#home_menu ul li.active
-{
-    font-weight: bold;
-
-    color: #fff; 
-    border-bottom: 1px solid #fff;
+#home_menu {
+  color: #FFFFFF;
+  text-align: right;
+  height: 100%;
+  padding: 0 10% 0 20%;
 }
 
-#home_content
-{
-    height: 100%;
-    padding: 0 2% 0 2%; 
+#home_menu ul {
+  width: 100%;
+}
 
-    color: #fff;
+#home_menu ul li {
+  cursor: pointer;
+  padding: 5px;
+  color: #808080;
 }
-#home_content #block_myproject
-{
-    display: none;
-}
-#home_content #block_myproject ul li
-{
-    cursor: pointer; 
 
-    color: #000;
+#home_menu ul li.active {
+  border-bottom: 1px solid #FFFFFF;
+  font-weight: bold;
+  color: #FFFFFF;
 }
-#home_content #block_myproject ul li .delete-project
-{
-    color: #f00;
+
+#home_content {
+  color: #FFFFFF;
+  height: 100%;
+  padding: 0 2% 0 2%;
 }
-#home_content #block_newproject
-{
-    display: none;
+
+#home_content #block_myproject {
+  display: none;
 }
-#home_content #block_settings
-{
-    display: none;
+
+#home_content #block_myproject ul li {
+  color: #000000;
+  cursor: pointer;
+}
+
+#home_content #block_myproject ul li .delete-project {
+  color: #FF0000;
+}
+
+#home_content #block_newproject {
+  display: none;
+}
+
+#home_content #block_settings {
+  display: none;
 }

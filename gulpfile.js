@@ -1,19 +1,28 @@
 const gulp = require('gulp');
-const plugins = require('gulp-load-plugins')();
+const sass = require('gulp-sass');
+const autoprefixer = require("gulp-autoprefixer");
+const plumber = require("gulp-plumber");
 
 const sassFiles = 'app/assets/scss/**/*.scss';
 const cssDest = 'app/assets/css/';
 
 gulp.task('scss', function() {
     return gulp.src(sassFiles)
-        .pipe(plugins.sass())
-        .pipe(plugins.csscomb())
-        .pipe(plugins.autoprefixer())
+        .pipe(plumber())
+        .pipe(sass({
+                errLogToConsole: true,
+                outputStyle: 'expanded'
+            }
+        ).on('error', sass.logError))
+        .pipe(autoprefixer())
         .pipe(gulp.dest(cssDest));
+
 });
 
 gulp.task('watch', function() {
-    gulp.watch(sassFiles, ['scss']);
+    return gulp.watch([sassFiles], ["scss"]).on('change', function(path) {
+        console.log('File ' + path.path + ' was changed');
+    });
 });
 
-gulp.task('default', ['scss']);
+gulp.task('default', gulp.series('scss'));

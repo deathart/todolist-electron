@@ -1,11 +1,9 @@
 html,
-body
-{
-    height: 100%;
+body {
+  height: 100%;
 }
 
-#about
-{
-    color: #fff; 
-    background-color: #5e42a6;
+#about {
+  background-color: #5e42a6;
+  color: #FFFFFF;
 }

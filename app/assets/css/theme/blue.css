@@ -1,28 +1,23 @@
-#home_menu
-{
-    background: #233550;
+#home_menu {
+  background: #233550;
 }
 
-#home_content
-{
-    background-color: #4280a6;
+#home_content {
+  background-color: #4280A6;
 }
 
-#config
-{
-    background-color: #233550;
+#config {
+  background-color: #233550;
 }
 
-#content
-{
-    background-color: #4280a6;
+#content {
+  background-color: #4280A6;
 }
 
-#BtnHome
-{
-    background-color: #233550;
+#BtnHome {
+  background-color: #233550;
 }
-#BtnHome:hover
-{
-    background-color: #0272b6;
+
+#BtnHome:hover {
+  background-color: #0272B6;
 }

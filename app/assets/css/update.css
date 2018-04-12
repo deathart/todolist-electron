@@ -1,28 +1,22 @@
 html,
-body
-{
-    height: 100%;
+body {
+  height: 100%;
 }
 
-#update
-{
-    color: #fff; 
-    background-color: #5e42a6;
+#update {
+  background-color: #5e42a6;
+  color: #FFFFFF;
 }
 
-h5
-{
-    text-align: center;
+h5 {
+  text-align: center;
 }
 
-.progress
-{
-    margin: 5px;
+.progress {
+  margin: 5px;
 }
 
-.message
-{
-    margin: 5px; 
-
-    text-align: center;
+.message {
+  text-align: center;
+  margin: 5px;
 }
