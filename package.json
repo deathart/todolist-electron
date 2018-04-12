@@ -26,10 +26,7 @@
   ],
   "author": "deathart",
   "copyright": "©deathart",
-  "license": {
-    "type": "GPL-3.0",
-    "url": "https://github.com/deathart/todolist-electron/blob/master/LICENSE"
-  },
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/deathart/todolist-electron/issues"
   },
