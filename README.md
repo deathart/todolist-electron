@@ -32,16 +32,17 @@ For tests we use jshint
     npm test
 
 # Todo
-- [ ] Online todolist
 - [x] Multiple theme
 - [x] Crypt projects & tasks
-- [ ] Linux & Mac version
-- [ ] Angular version
+- [x] Mac version
+- [x] i18n
+- [x] Automatique update
+- [ ] Online todolist
+- [ ] Linux version
 - [ ] Keyboard shortcode
 - [ ] Private Projects (Password Protection)
-- [x] More information for update
+- [ ] More information for update
 - [ ] Add new language
 - [ ] Import & export project (File & Url & Ftp)
 - [ ] Category
-- [x] i18n
-- [x] Automatique update
+- [ ] Add new bdd system
