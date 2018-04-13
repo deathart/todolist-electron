@@ -1,0 +1,22 @@
+#home_menu {
+    background: #48A440;
+}
+
+#home_content {
+    background-color: #73BF21;
+}
+
+#config {
+    background-color: #48A440;
+}
+
+#content {
+    background-color: #73BF21;
+}
+
+#BtnHome {
+    background-color: #48A440;
+    &:hover {
+        background-color: #73BF21;
+    }
+}

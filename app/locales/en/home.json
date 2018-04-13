@@ -23,8 +23,5 @@
     "settings_theme_choice": "Choice",
     "settings_theme_purple": "Purple",
     "settings_theme_blue": "Blue",
-    "settings_crypt": "Crypt projects & tasks",
-    "settings_crypt_choice": "Choice",
-    "settings_crypt_yes": "Yes",
-    "settings_crypt_no": "No"
+    "settings_theme_green": "Green"
 }

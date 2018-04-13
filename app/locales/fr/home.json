@@ -23,8 +23,5 @@
     "settings_theme_choice": "Choisissez",
     "settings_theme_purple": "Violet",
     "settings_theme_blue": "Bleu",
-    "settings_crypt": "Crypté les données",
-    "settings_crypt_choice": "Choisissez",
-    "settings_crypt_yes": "Yes",
-    "settings_crypt_no": "No"
+    "settings_theme_green": "Vert"
 }

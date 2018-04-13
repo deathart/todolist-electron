@@ -39,9 +39,9 @@ For tests we use jshint
 - [ ] Online todolist
 - [ ] Linux version
 - [ ] Keyboard shortcode
-- [ ] Private Projects (Password Protection)
 - [ ] More information for update
 - [ ] Add new language
+- [ ] Add new color theme
 - [ ] Import & export project (File & Url & Ftp)
 - [ ] Category
-- [ ] Add new bdd system
+- [ ] Add new bdd system ???
