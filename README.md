@@ -12,14 +12,13 @@ To download it nothing more simple, go to the [last release](https://github.com/
 
 # Installation
 To be able to the installer nothing more simple, to download the sources if above and with the invitation of command
-
-    npm install
-    npm start
+-`npm install`
+-`npm start`
     
 Or download [installer](https://github.com/deathart/todolist-electron/releases/latest) 
 
 # Build
-How-to [electron-builder](https://github.com/electron-userland/electron-builder/wiki/Multi-Platform-Build)
+Run this command : `npm run build`
     
 # Screens
 ![Screen 1](https://img4.hostingpics.net/pics/979159Capture.png)
