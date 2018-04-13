@@ -41,10 +41,6 @@ app.on('ready', function() {
         settings.set('theme', "purple");
     }
 
-    if (!settings.has('crypt')) {
-        settings.set('crypt', true);
-    }
-
     i18n.configure({
         directory: __dirname + '/locales/fr/'
     });

@@ -9,17 +9,7 @@ const moment = require('moment');
 const package = require(__dirname + '/../../package.json');
 const os = require('os');
 
-let db;
-
-if (settings.get('crypt')) {
-    db = low(new FileSync(os.homedir() + "/Documents/todolist-electron/project_list.json"), {
-        encrypt: true
-    });
-} else {
-    db = low(new FileSync(os.homedir() + "/Documents/todolist-electron/project_list.json"), {
-        encrypt: false
-    });
-}
+let db = low(new FileSync(os.homedir() + "/Documents/todolist-electron/project_list.json"));
 
 db.defaults({ projects: [], projects_info: [] }).write();
 
@@ -81,7 +71,11 @@ $(".add_project").submit(function(e) {
 
 
 $.each(db.get('projects').value(), function(key, value) {
-    $(".list_myprojects").append('<li class="list-group-item list-group-item-action flex-column align-items-start project_click" data-projectid="' + value.id + '"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">' + value.title + '</h5><small>' + i18n.__({ phrase: "content_myproject_list_date_create", locale: "home" }) + value.date_create + '</small></div><p class="mb-1">' + value.desc + '</p><small>' + i18n.__({ phrase: "content_myproject_list_date_last_update", locale: "home" }) + value.date_lastup + '<div class="float-right"><i class="fa fa-trash-o delete-project" aria-hidden="true"></i></div></small></li>');
+    let update_latest = "";
+    if (value.date_lastup) {
+        update_latest = i18n.__({ phrase: "content_myproject_list_date_last_update", locale: "home" }) + value.date_lastup;
+    }
+    $(".list_myprojects").append('<li class="list-group-item list-group-item-action flex-column align-items-start project_click" data-projectid="' + value.id + '"><div class="d-flex w-100 justify-content-between"><h5 class="mb-1">' + value.title + '</h5><small>' + i18n.__({ phrase: "content_myproject_list_date_create", locale: "home" }) + value.date_create + '</small></div><p class="mb-1">' + value.desc + '</p><small>' + update_latest + '<div class="float-right"><i class="fa fa-trash-o delete-project" aria-hidden="true"></i></div></small></li>');
 });
 
 $(".project_click").click(function(e) {
@@ -124,22 +118,6 @@ $("#inlineFormCustomSelectPref").change(function() {
 $("#SettingsTheme").change(function() {
 
     settings.set('theme', $(this).val());
-
-    location.reload();
-
-});
-
-$("#SettingsCrypt").change(function() {
-
-    let resu = $(this).val();
-    if (parseInt(resu)) {
-        if (resu == 1) {
-            settings.set('crypt', true);
-        } else if (resu == 2) {
-            settings.set('crypt', false);
-        }
-        location.reload();
-    }
 
     location.reload();
 

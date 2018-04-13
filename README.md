@@ -33,7 +33,6 @@ For tests we use jshint
 
 # Todo
 - [x] Multiple theme
-- [x] Crypt projects & tasks
 - [x] Mac version
 - [x] i18n
 - [x] Automatique update

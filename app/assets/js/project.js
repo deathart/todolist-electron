@@ -8,18 +8,7 @@ const moment = require('moment');
 const package = require(__dirname + '/../../package.json');
 const os = require('os');
 
-let db;
-
-if (settings.get('crypt')) {
-    db = low(new FileSync(os.homedir() + "/Documents/todolist-electron/project_list.json"), {
-        encrypt: true
-    });
-} else {
-    db = low(new FileSync(os.homedir() + "/Documents/todolist-electron/project_list.json"), {
-        encrypt: false
-    });
-}
-
+let db = low(new FileSync(os.homedir() + "/Documents/todolist-electron/project_list.json"));
 let project_id = ipcRenderer.sendSync('getproject');
 let project_info = db.get('projects').filter({ id: project_id }).value()[0];
 
