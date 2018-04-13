@@ -51,7 +51,7 @@
     </div>
     <!-- Modal -->
     <div class="modal fade" id="ModalEditProject">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="ModalLabelEditProject">{{ i18n "modal_edit_project_title" }}</h5>
@@ -176,8 +176,10 @@
                         <div class="form-group row">
                             <label for="inputProgress" class="col-sm-2 col-form-label">{{ i18n "modal_update_task_label_progress" }}</label>
                             <div class="input-group col-sm-10">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">%</div>
+                                </div>
                                 <input type="number" class="form-control" id="inputProgress" min="0" max="100">
-                                <div class="input-group-addon">%</div>
                             </div>
                         </div>
                     </form>
