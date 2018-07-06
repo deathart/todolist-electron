@@ -116,11 +116,8 @@ $("#inlineFormCustomSelectPref").change(function() {
 });
 
 $("#SettingsTheme").change(function() {
-
     settings.set('theme', $(this).val());
-
     location.reload();
-
 });
 
 if (settings.get('dev') == true) {

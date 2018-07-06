@@ -115,6 +115,24 @@ function createWindow() {
         defaultHeight: 800
     });
 
+    let backgroundColor = '#312450';
+
+    if (settings.has('theme')) {
+        switch (settings.get('theme')) {
+            case 'purple':
+                backgroundColor = '#312450';
+                break;
+            case 'blue':
+                backgroundColor = '#233550';
+                break;
+            case 'green':
+                backgroundColor = '#48A440';
+                break;
+            default:
+                backgroundColor = '#312450';
+        }
+    }
+
     mainWindow = new BrowserWindow({
         x: mainWindowState.x,
         y: mainWindowState.y,
@@ -122,7 +140,7 @@ function createWindow() {
         height: mainWindowState.height,
         minWidth: 1300,
         minHeight: 800,
-        backgroundColor: '#312450',
+        backgroundColor: backgroundColor,
         show: false
     });
 
