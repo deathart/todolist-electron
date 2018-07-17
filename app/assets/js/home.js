@@ -8,6 +8,7 @@ const i18n = require("i18n");
 const moment = require('moment');
 const package = require(__dirname + '/../../package.json');
 const os = require('os');
+const fs = require('fs');
 
 let db = low(new FileSync(os.homedir() + "/Documents/todolist-electron/project_list.json"));
 
@@ -97,17 +98,27 @@ $(".delete-project").click(function(e) {
     return false;
 });
 
-$("#inlineFormCustomSelectPref").change(function() {
-    let resu = $(this).val();
+$("#SettingsLang").change(function() {
+    settings.set('lang', $(this).val());
+    location.reload();
+});
 
-    if (parseInt(resu)) {
-        if (resu == 1) {
-            settings.set('lang', 'fr');
-        } else if (resu == 2) {
-            settings.set('lang', 'en');
-        }
-        location.reload();
-    }
+fs.readdir(__dirname + "/../locales/", (err, files) => {
+    $("#SettingsLang").append('<option>' + i18n.__({ phrase: "settings_lang_choice" , locale: "home" }) + '</option>');
+    files.forEach(file => {
+        const selected = (settings.get('lang') === file) ? 'selected' : null;
+        $("#SettingsLang").append('<option value="' + file + '" ' + selected + '>' + i18n.__({ phrase: "settings_lang_" + file, locale: "home" }) + '</option>');
+    });
+});
+
+fs.readdir(__dirname + "/../assets/css/theme/", (err, files) => {
+    $("#SettingsTheme").append('<option>' + i18n.__({ phrase: "settings_theme_choice", locale: "home" }) + '</option>');
+    files.forEach(file => {
+        const name = file.slice(0, -4);
+        const selected = (settings.get('theme') === name) ? 'selected' : null;
+
+        $("#SettingsTheme").append('<option value="' + name + '" ' + selected + '>' + i18n.__({ phrase: "settings_theme_" + name, locale: "home" }) + '</option>');
+    });
 });
 
 $("#SettingsTheme").change(function() {
