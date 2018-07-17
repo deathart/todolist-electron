@@ -48,7 +48,6 @@ app.on('ready', function() {
     createWindow();
 
     autoUpdater.checkForUpdates();
-
 });
 
 app.on('window-all-closed', () => {
@@ -83,7 +82,6 @@ ipcMain.on('change-dev', function(event, arg) {
 });
 
 function OpenAboutWindow(win) {
-
     let aboutwin = new BrowserWindow({
         width: 350,
         height: 400,
@@ -105,11 +103,9 @@ function OpenAboutWindow(win) {
     if (settings.get('dev')) {
         aboutwin.webContents.openDevTools();
     }
-
 }
 
 function createWindow() {
-
     mainWindowState = windowStateKeeper({
         defaultWidth: 1300,
         defaultHeight: 800
@@ -217,11 +213,9 @@ autoUpdater.on('update-available', (ev, info) => {
             OpenUpdateWindow(mainWindow, ev.version, ev.releaseNotes);
         }
     });
-
 });
 
 function OpenUpdateWindow(win, version, releasenote) {
-
     let updatewin = new BrowserWindow({
         width: 350,
         height: 450,
@@ -268,7 +262,6 @@ function OpenUpdateWindow(win, version, releasenote) {
             autoUpdater.quitAndInstall();
         }, 1000);
     });
-
 }
 
 autoUpdater.on('error', (err) => {

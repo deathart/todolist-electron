@@ -41,7 +41,6 @@ $("#home_menu > ul > li").click(function(e) {
     $(block).show();
 
     return false;
-
 });
 
 $(".add_project").submit(function(e) {
@@ -86,7 +85,6 @@ $(".project_click").click(function(e) {
 });
 
 $(".delete-project").click(function(e) {
-
     e.preventDefault();
 
     var project_id = $(this).parents("li").data("projectid");
@@ -97,11 +95,9 @@ $(".delete-project").click(function(e) {
     $(this).parents("li").remove();
 
     return false;
-
 });
 
 $("#inlineFormCustomSelectPref").change(function() {
-
     let resu = $(this).val();
 
     if (parseInt(resu)) {
@@ -112,7 +108,6 @@ $("#inlineFormCustomSelectPref").change(function() {
         }
         location.reload();
     }
-
 });
 
 $("#SettingsTheme").change(function() {
