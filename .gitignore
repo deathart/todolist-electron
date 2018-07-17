@@ -62,3 +62,5 @@ yarn.lock
 releases/
 todolist-electron.iml
 .idea/
+
+app/assets/

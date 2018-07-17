@@ -2,10 +2,6 @@
   background: #48A440;
 }
 
-#home_menu > ul > li {
-  color: #8cbda4;
-}
-
 #home_content {
   background-color: #73BF21;
 }
@@ -25,3 +21,5 @@
 #BtnHome:hover {
   background-color: #73BF21;
 }
+
+/*# sourceMappingURL=../maps/theme/green.css.map */
