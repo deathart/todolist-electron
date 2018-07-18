@@ -28,30 +28,10 @@ gulp.task('css', function() {
         .pipe(gulp.dest(cssBaseDest))
 });
 
-gulp.task('minify', function() {
-    gulp.src(cssBaseDest).pipe(gulp_minify({
-        minify: true,
-        collapseWhitespace: true,
-        conservativeCollapse: true,
-        minifyJS: true,
-        minifyCSS: true,
-        getKeptComment: function (content, filePath) {
-            var m = content.match(/\/\*![\s\S]*?\*\//img);
-            return m && m.join('\n') + '\n' || '';
-        }
-      })).pipe(gulp.dest(cssBaseDest));
-
-    gulp.src(jsFiles).pipe(gulp_minify({
-        minify: true,
-        collapseWhitespace: true,
-        conservativeCollapse: true,
-        minifyJS: true,
-        minifyCSS: true,
-        getKeptComment: function (content, filePath) {
-            var m = content.match(/\/\*![\s\S]*?\*\//img);
-            return m && m.join('\n') + '\n' || '';
-        }
-      })).pipe(gulp.dest(jsDest));
+gulp.task('js', function(){
+    return gulp.src(jsFiles)
+        .pipe(gulp_plumber())
+        .pipe(gulp.dest(jsDest));
 });
 
 gulp.task('image', function() {
@@ -65,16 +45,40 @@ gulp.task('fonts', function() {
         .pipe(gulp.dest(fontsDestFiles));
 });
 
-gulp.task('watch', function() {
-    gulp.watch(scssBaseFiles, ['css']);
-    gulp.watch(imageFiles + '*.{png,jpg,jpeg,gif,svg}', ['image']);
-    gulp.watch(jsFiles, function() {
-    });
-    gulp.watch(fontsBaseFiles, function() {
-    });
+gulp.task('minify:css', function() {
+    return gulp.src(cssBaseDest).pipe(gulp_minify({
+        minify: true,
+        collapseWhitespace: true,
+        conservativeCollapse: true,
+        minifyJS: true,
+        minifyCSS: true,
+        getKeptComment: function (content, filePath) {
+            var m = content.match(/\/\*![\s\S]*?\*\//img);
+            return m && m.join('\n') + '\n' || '';
+        }
+      })).pipe(gulp.dest(cssBaseDest));
 });
 
-gulp.task('build', gulp.series('css', 'image', 'fonts'), 'minify');
-/*gulp.task('default', ['css', 'watch']);
-gulp.task('build', gulp.series('css', 'image', 'fonts'));
-gulp.task('compile', gulp.series('css', 'image', 'fonts'))*/
+gulp.task('minify:js', function() {
+    return gulp.src(jsFiles).pipe(gulp_minify({
+        minify: true,
+        collapseWhitespace: true,
+        conservativeCollapse: true,
+        minifyJS: true,
+        minifyCSS: true,
+        getKeptComment: function (content, filePath) {
+            var m = content.match(/\/\*![\s\S]*?\*\//img);
+            return m && m.join('\n') + '\n' || '';
+        }
+      })).pipe(gulp.dest(jsDest));
+});
+
+gulp.task('watch', function() {
+    gulp.watch(scssBaseFiles, ['css']);
+    gulp.watch(jsFiles, ['js']);
+    gulp.watch(imageFiles + '*.{png,jpg,jpeg,gif,svg}', ['image']);
+    gulp.watch(fontsBaseFiles, ['fonts']);
+});
+
+gulp.task('compile', gulp.series('css', 'js', 'image', 'fonts'))
+gulp.task('build', gulp.series(gulp.parallel('css', 'js', 'image', 'fonts'), gulp.parallel('minify:css', 'minify:js')));
