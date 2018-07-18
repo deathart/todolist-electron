@@ -10,7 +10,7 @@
     "start": "electron . --enable-logging",
     "build": "npm run build-assets && npm run build-app",
     "build-app": "electron-builder --mac --win --ia32 --x64",
-    "build-assets": "gulp scss"
+    "build-assets": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -91,8 +91,12 @@
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-csscomb": "^3.0.8",
+    "gulp-csslint": "^1.0.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-minifier": "^1.2.2",
     "gulp-plumber": "^1.2.0",
     "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
     "jshint": "^2.9.5",
     "jshint-stylish": "^2.2.1",
     "jshint-stylish-summary": "^0.1.2"
