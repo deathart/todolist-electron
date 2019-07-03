@@ -10,7 +10,9 @@
     "start": "electron . --enable-logging",
     "build": "npm run build-assets && npm run build-app",
     "build-app": "electron-builder --mac --win --ia32 --x64",
-    "build-assets": "gulp build"
+    "build-assets": "gulp build",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -83,7 +85,8 @@
     "i18n": "^0.8.3",
     "jquery": "^3.3.1",
     "lowdb": "^1.0.0",
-    "moment": "^2.22.2"
+    "moment": "^2.22.2",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "electron": "^2.0.5",
@@ -100,5 +103,6 @@
     "jshint": "^2.9.5",
     "jshint-stylish": "^2.2.1",
     "jshint-stylish-summary": "^0.1.2"
-  }
+  },
+  "snyk": true
 }
